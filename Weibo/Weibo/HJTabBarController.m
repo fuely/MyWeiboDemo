@@ -103,6 +103,18 @@
     
 }
 
+// IWTabBar代理方法
+- (void)tabBar:(HJTabBar *)tabBar didSelectedIndex:(NSInteger)selectedIndex
+{
+    if (selectedIndex == 0 && selectedIndex == _selIndex ) { // 点击首页 刷新首页
+        // 刷新数据
+    }
+    
+    self.selectedIndex = selectedIndex;
+    
+    _selIndex = selectedIndex;
+}
+
 
 
 @end

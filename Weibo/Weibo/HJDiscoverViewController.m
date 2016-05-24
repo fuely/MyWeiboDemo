@@ -7,6 +7,7 @@
 //
 
 #import "HJDiscoverViewController.h"
+#import "HJSearchBar.h"
 
 @interface HJDiscoverViewController ()
 
@@ -17,11 +18,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    // 设置导航条内容
+    [self setUpNavBar];
+
+}
+
+- (void)setUpNavBar
+{
+    //创建搜索框
+    HJSearchBar *searchBar = [[HJSearchBar alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 32)];
+    self.navigationItem.titleView = searchBar;
 }
 
 - (void)didReceiveMemoryWarning {

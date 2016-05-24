@@ -7,6 +7,11 @@
 
 #import "UIView+Frame.h"
 #import "UIBarButtonItem+Create.h"
+#import "UIImage+Resizable.h"
+
 #import "HJWeibocfg.h"
+#import "Common.h"
+
+
 
 #endif

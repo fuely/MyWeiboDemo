@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,7 +17,20 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Default-1" translatesAutoresizingMaskIntoConstraints="NO" id="nfy-cW-KvG">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nfy-cW-KvG" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="topMargin" id="6nQ-7Z-0YG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nfy-cW-KvG" secondAttribute="trailing" constant="-20" id="RsJ-q4-byi"/>
+                            <constraint firstItem="nfy-cW-KvG" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="aFe-1B-Bui"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="nfy-cW-KvG" secondAttribute="bottom" id="gL5-6B-0dI"/>
+                            <constraint firstItem="nfy-cW-KvG" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="kDn-cl-Uwh"/>
+                            <constraint firstItem="nfy-cW-KvG" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-20" id="zN7-VG-q2k"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -24,4 +38,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Default-1" width="320" height="480"/>
+    </resources>
 </document>

@@ -28,6 +28,11 @@
 		933E60141CF3441F00C5F7BE /* HJHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 933E60131CF3441F00C5F7BE /* HJHomeViewController.m */; };
 		933E60171CF3445600C5F7BE /* HJMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 933E60161CF3445600C5F7BE /* HJMessageViewController.m */; };
 		933E601A1CF3448100C5F7BE /* HJProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 933E60191CF3448100C5F7BE /* HJProfileViewController.m */; };
+		93706A5D1CF418A3007C7341 /* UIImage+Resizable.m in Sources */ = {isa = PBXBuildFile; fileRef = 93706A5C1CF418A3007C7341 /* UIImage+Resizable.m */; };
+		93706A601CF419C0007C7341 /* HJSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 93706A5F1CF419C0007C7341 /* HJSearchBar.m */; };
+		93706A631CF42D29007C7341 /* HJTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 93706A621CF42D29007C7341 /* HJTitleButton.m */; };
+		93706A6B1CF43DCF007C7341 /* HJNewFeatureController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93706A6A1CF43DCF007C7341 /* HJNewFeatureController.m */; };
+		93706A6E1CF43DF7007C7341 /* HJNewFeatureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93706A6D1CF43DF7007C7341 /* HJNewFeatureCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +96,17 @@
 		933E60161CF3445600C5F7BE /* HJMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJMessageViewController.m; sourceTree = "<group>"; };
 		933E60181CF3448100C5F7BE /* HJProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJProfileViewController.h; sourceTree = "<group>"; };
 		933E60191CF3448100C5F7BE /* HJProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJProfileViewController.m; sourceTree = "<group>"; };
+		93706A5B1CF418A3007C7341 /* UIImage+Resizable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resizable.h"; sourceTree = "<group>"; };
+		93706A5C1CF418A3007C7341 /* UIImage+Resizable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resizable.m"; sourceTree = "<group>"; };
+		93706A5E1CF419C0007C7341 /* HJSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJSearchBar.h; sourceTree = "<group>"; };
+		93706A5F1CF419C0007C7341 /* HJSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJSearchBar.m; sourceTree = "<group>"; };
+		93706A611CF42D29007C7341 /* HJTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJTitleButton.h; sourceTree = "<group>"; };
+		93706A621CF42D29007C7341 /* HJTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJTitleButton.m; sourceTree = "<group>"; };
+		93706A641CF42DE7007C7341 /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		93706A691CF43DCF007C7341 /* HJNewFeatureController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJNewFeatureController.h; sourceTree = "<group>"; };
+		93706A6A1CF43DCF007C7341 /* HJNewFeatureController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJNewFeatureController.m; sourceTree = "<group>"; };
+		93706A6C1CF43DF7007C7341 /* HJNewFeatureCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJNewFeatureCell.h; sourceTree = "<group>"; };
+		93706A6D1CF43DF7007C7341 /* HJNewFeatureCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJNewFeatureCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +157,7 @@
 		933E5F881CF2D2B700C5F7BE /* Weibo */ = {
 			isa = PBXGroup;
 			children = (
+				93706A651CF43D6D007C7341 /* NewFeature */,
 				933E5FF31CF33B4E00C5F7BE /* Tool */,
 				933E5FE61CF3328B00C5F7BE /* Oauth */,
 				933E5FC01CF2D42D00C5F7BE /* Main */,
@@ -193,6 +210,7 @@
 				933E5FD41CF2E89900C5F7BE /* WeiboPCH.pch */,
 				933E5FF01CF338D800C5F7BE /* HJWeibocfg.h */,
 				933E5FF11CF338D800C5F7BE /* HJWeibocfg.m */,
+				93706A641CF42DE7007C7341 /* Common.h */,
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -200,9 +218,9 @@
 		933E5FC01CF2D42D00C5F7BE /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				933E5FC21CF2D44000C5F7BE /* Model */,
-				933E5FC31CF2D44B00C5F7BE /* View */,
 				933E5FC11CF2D43400C5F7BE /* Controller */,
+				933E5FC31CF2D44B00C5F7BE /* View */,
+				933E5FC21CF2D44000C5F7BE /* Model */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -245,6 +263,8 @@
 				933E5FD21CF2E7A700C5F7BE /* UIView+Frame.m */,
 				933E5FE31CF311AD00C5F7BE /* UIBarButtonItem+Create.h */,
 				933E5FE41CF311AD00C5F7BE /* UIBarButtonItem+Create.m */,
+				93706A5B1CF418A3007C7341 /* UIImage+Resizable.h */,
+				93706A5C1CF418A3007C7341 /* UIImage+Resizable.m */,
 			);
 			name = Category;
 			sourceTree = "<group>";
@@ -327,6 +347,8 @@
 		933E5FF81CF33FD800C5F7BE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				93706A611CF42D29007C7341 /* HJTitleButton.h */,
+				93706A621CF42D29007C7341 /* HJTitleButton.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -426,6 +448,8 @@
 		933E600D1CF3438A00C5F7BE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				93706A5E1CF419C0007C7341 /* HJSearchBar.h */,
+				93706A5F1CF419C0007C7341 /* HJSearchBar.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -435,6 +459,41 @@
 			children = (
 				933E600F1CF343E600C5F7BE /* HJDiscoverViewController.h */,
 				933E60101CF343E600C5F7BE /* HJDiscoverViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		93706A651CF43D6D007C7341 /* NewFeature */ = {
+			isa = PBXGroup;
+			children = (
+				93706A681CF43D99007C7341 /* Controller */,
+				93706A671CF43D8D007C7341 /* View */,
+				93706A661CF43D80007C7341 /* Model */,
+			);
+			name = NewFeature;
+			sourceTree = "<group>";
+		};
+		93706A661CF43D80007C7341 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		93706A671CF43D8D007C7341 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				93706A6C1CF43DF7007C7341 /* HJNewFeatureCell.h */,
+				93706A6D1CF43DF7007C7341 /* HJNewFeatureCell.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		93706A681CF43D99007C7341 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				93706A691CF43DCF007C7341 /* HJNewFeatureController.h */,
+				93706A6A1CF43DCF007C7341 /* HJNewFeatureController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -573,15 +632,20 @@
 				933E5FD31CF2E7A700C5F7BE /* UIView+Frame.m in Sources */,
 				933E5FC61CF2D50C00C5F7BE /* HJTabBarController.m in Sources */,
 				933E5FCF1CF2D93100C5F7BE /* HJBadgeView.m in Sources */,
+				93706A601CF419C0007C7341 /* HJSearchBar.m in Sources */,
 				933E5FF21CF338D800C5F7BE /* HJWeibocfg.m in Sources */,
 				933E60111CF343E600C5F7BE /* HJDiscoverViewController.m in Sources */,
+				93706A5D1CF418A3007C7341 /* UIImage+Resizable.m in Sources */,
+				93706A631CF42D29007C7341 /* HJTitleButton.m in Sources */,
 				933E5F8E1CF2D2B700C5F7BE /* AppDelegate.m in Sources */,
 				933E601A1CF3448100C5F7BE /* HJProfileViewController.m in Sources */,
 				933E5FCC1CF2D8BF00C5F7BE /* HJTabBarButton.m in Sources */,
 				933E5FE51CF311AD00C5F7BE /* UIBarButtonItem+Create.m in Sources */,
+				93706A6E1CF43DF7007C7341 /* HJNewFeatureCell.m in Sources */,
 				933E5F8B1CF2D2B700C5F7BE /* main.m in Sources */,
 				933E60171CF3445600C5F7BE /* HJMessageViewController.m in Sources */,
 				933E5FEC1CF3332200C5F7BE /* HJAccount.m in Sources */,
+				93706A6B1CF43DCF007C7341 /* HJNewFeatureController.m in Sources */,
 				933E60141CF3441F00C5F7BE /* HJHomeViewController.m in Sources */,
 				933E5FEF1CF3374D00C5F7BE /* HJOauthViewController.m in Sources */,
 				933E5FC91CF2D5F500C5F7BE /* HJTabBar.m in Sources */,

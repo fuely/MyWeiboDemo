@@ -9,9 +9,10 @@
 #import "HJNavViewController.h"
 #import "HJTabBar.h"
 
-#define IWNavgationBarTitleFont [UIFont boldSystemFontOfSize:20]
 
 @interface HJNavViewController ()<UINavigationControllerDelegate>
+
+@property (nonatomic, strong) id popDelegate;
 
 @end
 
@@ -38,7 +39,7 @@
     [item setTitleTextAttributes:disableDictM forState:UIControlStateDisabled];
     
     NSMutableDictionary *normalDictM = [NSMutableDictionary dictionary];
-    normalDictM[NSForegroundColorAttributeName] = [UIColor cyanColor];
+    normalDictM[NSForegroundColorAttributeName] = [UIColor orangeColor];
     // 设置普通状态下的按钮颜色
     [item setTitleTextAttributes:normalDictM forState:UIControlStateNormal];
     
@@ -51,7 +52,7 @@
     
     UINavigationBar *nav = [UINavigationBar appearanceWhenContainedInInstancesOfClasses:@[[HJNavViewController class]]];
     NSMutableDictionary *dictM = [NSMutableDictionary dictionary];
-    dictM[NSFontAttributeName] = IWNavgationBarTitleFont;
+    dictM[NSFontAttributeName] = HJNavgationBarTitleFont;
     [nav setTitleTextAttributes:dictM];
 }
 
@@ -59,8 +60,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.interactivePopGestureRecognizer.delegate = nil;
+    _popDelegate = self.interactivePopGestureRecognizer.delegate;
     self.delegate = self;
     
 }
@@ -108,6 +108,19 @@
         }
     }
     
+}
+
+- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    if (viewController == self.viewControllers[0]) {//显示根控制器
+        
+        //还原滑动返回手势的代理
+        self.interactivePopGestureRecognizer.delegate = _popDelegate;
+    }else{//不是显示根控制器
+        
+        //实现滑动返回功能,清空代理
+        self.interactivePopGestureRecognizer.delegate = nil;
+    }
 }
 
 

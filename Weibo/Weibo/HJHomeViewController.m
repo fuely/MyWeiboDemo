@@ -7,8 +7,11 @@
 //
 
 #import "HJHomeViewController.h"
+#import "HJTitleButton.h"
 
 @interface HJHomeViewController ()
+
+@property (nonatomic, weak) HJTitleButton *titleButton;
 
 @end
 
@@ -17,12 +20,59 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    // 设置导航条的内容
+    [self setUpNavBar];
+
 }
+
+#pragma mark - 搭建界面
+// 设置导航条
+- (void)setUpNavBar
+{
+    UIBarButtonItem *friendsearch = [UIBarButtonItem barButtonItemWithImage:@"navigationbar_friendsearch" highImage:@"navigationbar_friendsearch_highlighted" target:self action:@selector(friendsearch)];
+    self.navigationItem.leftBarButtonItem = friendsearch;
+    
+    UIBarButtonItem *pop = [UIBarButtonItem barButtonItemWithImage:@"navigationbar_pop" highImage:@"navigationbar_pop_highlighted" target:self action:@selector(pop)];
+    self.navigationItem.rightBarButtonItem = pop;
+    
+    // 设置titleView
+    HJTitleButton *titleButton = [HJTitleButton buttonWithType:UIButtonTypeCustom];
+    
+    [titleButton addTarget:self action:@selector(titleClick:) forControlEvents:UIControlEventTouchUpInside];
+    
+    _titleButton = titleButton;
+    
+    self.navigationItem.titleView = titleButton;
+    
+}
+
+// 点击标题的时候调用
+- (void)titleClick:(UIButton *)button
+{
+    button.selected = !button.selected;
+
+/*    //  显示菜单
+    CGFloat x = (self.view.width - 200) * 0.5;
+    CGFloat y = CGRectGetMaxY(self.navigationController.navigationBar.frame) - 9;
+    
+    self.popView.contentView = self.popVc.view;
+    
+    [self.popView showInRect:CGRectMake(x, y, 200, 200)];
+*/
+    
+}
+
+
+- (void)friendsearch
+{
+    
+}
+
+- (void)pop
+{
+    
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

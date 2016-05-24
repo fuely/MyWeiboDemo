@@ -10,6 +10,9 @@
 
 #import "HJOauthViewController.h"
 #import "HJTabBarController.h"
+#import "HJNewFeatureController.h"
+
+#define HJVersionKey @"version"
 
 @interface AppDelegate ()
 
@@ -21,9 +24,31 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    //创建窗口
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    HJTabBarController *oauth = [[HJTabBarController alloc] init];
-    self.window.rootViewController = oauth;
+    
+    //1.获取当前版本号
+    NSString *currentVersion = [NSBundle mainBundle].infoDictionary[@"CFBundleVersion"];
+    
+    //2.获取上一次的版本号
+    NSString *lastVersion = [[NSUserDefaults standardUserDefaults] objectForKey:HJVersionKey];
+    
+    //判断当前是否有新版本
+    if ([currentVersion isEqualToString:lastVersion]) {//没有新版本号
+        
+        //进入主界面
+        HJTabBarController *oauth = [[HJTabBarController alloc] init];
+        self.window.rootViewController = oauth;
+        
+    }else{//有新版本号
+        
+        //进入新特性界面
+        HJNewFeatureController *oauth = [[HJNewFeatureController alloc] init];
+        self.window.rootViewController = oauth;
+        
+        //保持当前版本号
+        [[NSUserDefaults standardUserDefaults] setObject:currentVersion forKey:HJVersionKey];
+    }
     
     [self.window makeKeyAndVisible];
     
