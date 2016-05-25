@@ -30,10 +30,12 @@
 {
     _expires_in = expires_in;
     
+    //计算过期时间 = 当前时间 + 有效期
     NSDate *date = [NSDate date];
     _expires_time = [date dateByAddingTimeInterval:[expires_in longLongValue]];
 }
 
+//归档的时候调用:告诉系统哪个属性需要归档,如何归档
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
     [aCoder encodeObject:_access_token forKey:HJAccessTokenKey];
@@ -43,9 +45,11 @@
     [aCoder encodeObject:_name forKey:HJNameKey];
 }
 
+//解档的时候调用:告诉系统哪个属性需要解档,如何解档
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     if (self = [super init]) {
+        //一定要赋值 
         _access_token = [aDecoder decodeObjectForKey:HJAccessTokenKey];
         _expires_time = [aDecoder decodeObjectForKey:HJExpiresTimeKey];
         _expires_in = [aDecoder decodeObjectForKey:HJExpiresInKey];

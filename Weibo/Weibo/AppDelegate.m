@@ -9,10 +9,9 @@
 #import "AppDelegate.h"
 
 #import "HJOauthViewController.h"
-#import "HJTabBarController.h"
-#import "HJNewFeatureController.h"
+#import "HJGuideTool.h"
+#import "HJAccountTool.h"
 
-#define HJVersionKey @"version"
 
 @interface AppDelegate ()
 
@@ -26,29 +25,15 @@
     
     //创建窗口
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    
-    //1.获取当前版本号
-    NSString *currentVersion = [NSBundle mainBundle].infoDictionary[@"CFBundleVersion"];
-    
-    //2.获取上一次的版本号
-    NSString *lastVersion = [[NSUserDefaults standardUserDefaults] objectForKey:HJVersionKey];
-    
-    //判断当前是否有新版本
-    if ([currentVersion isEqualToString:lastVersion]) {//没有新版本号
+
+    if ([HJAccountTool account]) {
+        [HJGuideTool guideRootViewController:self.window];
+    }else{
         
-        //进入主界面
-        HJTabBarController *oauth = [[HJTabBarController alloc] init];
+        HJOauthViewController *oauth = [[HJOauthViewController alloc] init];
         self.window.rootViewController = oauth;
-        
-    }else{//有新版本号
-        
-        //进入新特性界面
-        HJNewFeatureController *oauth = [[HJNewFeatureController alloc] init];
-        self.window.rootViewController = oauth;
-        
-        //保持当前版本号
-        [[NSUserDefaults standardUserDefaults] setObject:currentVersion forKey:HJVersionKey];
     }
+
     
     [self.window makeKeyAndVisible];
     

@@ -9,13 +9,32 @@
 #import "HJHomeViewController.h"
 #import "HJTitleButton.h"
 
+#import "HJStatus.h"
+#import "HJUser.h"
+#import "HJStatusFrame.h"
+#import "HJStatusCell.h"
+
+#import "MJRefresh.h"
+#import "UIImageView+WebCache.h"
+
+const int navHeight = 64;
+
 @interface HJHomeViewController ()
 
+@property (nonatomic, strong) NSMutableArray *statusFrameArr;
 @property (nonatomic, weak) HJTitleButton *titleButton;
 
 @end
 
 @implementation HJHomeViewController
+
+- (NSMutableArray *)statusFrameArr
+{
+    if (_statusFrameArr == nil) {
+        _statusFrameArr = [NSMutableArray array];
+    }
+    return _statusFrameArr;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -23,7 +42,114 @@
     // 设置导航条的内容
     [self setUpNavBar];
 
+    // 添加刷新控件
+    [self setUpRefreshView];
+    
+    // 开始刷新
+    [self.tableView headerBeginRefreshing];
+    
+    self.tableView.backgroundColor = HJColor(211, 211, 211);
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
+
+- (void)setUpRefreshView
+{
+    // 添加下拉刷新控件
+    typeof(self) homeVc = self;
+    [self.tableView addHeaderWithCallback:^{
+        [homeVc loadNewStatuses];
+    }];
+    
+    // 添加上拉加载更多
+    [self.tableView addFooterWithCallback:^{
+        [homeVc loadMoreStatuses];
+    }];
+}
+
+- (void)loadMoreStatuses
+{
+    HJStatusFrame *statusF = [self.statusFrameArr lastObject];
+    id maxID = nil;
+    if (statusF.status.idstr) {
+        maxID = @([statusF.status.idstr longLongValue] - 1);
+    }
+    
+    [HJStatusTool moreStatusesWithID:maxID success:^(NSArray *statusFrameArr) {
+        
+        [self.statusFrameArr addObjectsFromArray:statusFrameArr];
+        
+        [self.tableView reloadData];
+        [self.tableView footerEndRefreshing];
+    } failure:^(NSError *error) {
+        
+    }];
+    
+}
+
+- (void)refresh
+{
+    [self.tableView headerBeginRefreshing];
+}
+
+
+- (void)loadNewStatuses
+{
+    HJStatusFrame *statusF = [self.statusFrameArr firstObject];
+    id sinceID = nil;
+    if (statusF.status.idstr) {
+        sinceID = statusF.status.idstr;
+    }
+    [HJStatusTool newStatusesWithID:sinceID success:^(NSArray *statusFrameArr) {
+        
+        // 提示最新微博数据
+        NSInteger count = statusFrameArr.count;
+        [self showNewStatusesCount:count];
+        
+        NSIndexSet *indexSet = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, count)];
+        [self.statusFrameArr insertObjects:statusFrameArr atIndexes:indexSet];
+        
+        [self.tableView reloadData];
+        [self.tableView headerEndRefreshing];
+    } failure:^(NSError *error) {
+        
+    }];
+    
+}
+
+// 显示最新微博数
+- (void)showNewStatusesCount:(NSInteger)count
+{
+    if (count == 0) return;
+    CGFloat labelH = 35;
+    CGFloat labelW = self.view.width;
+    CGFloat labelY = navHeight - labelH;
+    UILabel *statusLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, labelY, labelW, labelH)];
+    
+    statusLabel.text = [NSString stringWithFormat:@"%ld条新微博",count];
+    statusLabel.textAlignment = NSTextAlignmentCenter;
+    statusLabel.textColor = [UIColor whiteColor];
+    statusLabel.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"timeline_new_status_background"]];
+    
+    [self.navigationController.view insertSubview:statusLabel belowSubview:self.navigationController.navigationBar];
+    
+    
+    [UIView animateWithDuration:0.5 animations:^{
+        
+        statusLabel.transform = CGAffineTransformMakeTranslation(0, labelY);
+    } completion:^(BOOL finished) {
+        
+        [UIView animateWithDuration:0.5 delay:1 options:UIViewAnimationOptionCurveLinear animations:^{
+            statusLabel.transform = CGAffineTransformIdentity;
+            
+        } completion:^(BOOL finished) {
+            [statusLabel removeFromSuperview];
+        }];
+        
+    }];
+    
+}
+
+
 
 #pragma mark - 搭建界面
 // 设置导航条
@@ -73,76 +199,40 @@
     
 }
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - tableView数据源方法
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.statusFrameArr.count;
 }
 
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
-}
-
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
     
-    // Configure the cell...
+    // 创建cell
+    HJStatusCell *cell = [HJStatusCell cellWithTableView:tableView];
+    
+    HJStatusFrame *statusF =  self.statusFrameArr[indexPath.row];
+    
+    cell.statusF = statusF;
     
     return cell;
+    
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+//    HJOneViewController *one = [[HJOneViewController alloc] init];
+//    one.hidesBottomBarWhenPushed = YES;
+//    
+//    [self.navigationController pushViewController:one animated:YES];
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    HJStatusFrame *statusF =  self.statusFrameArr[indexPath.row];
+    
+    return statusF.cellHeight;
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

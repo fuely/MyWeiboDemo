@@ -18,4 +18,14 @@
 #define HJLog(...)
 #endif
 
+#define HJColor(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1]
+
+/*******StatusCell ******/
+#define HJCellMargin 10
+#define HJNameFont [UIFont systemFontOfSize:15]
+#define HJTimeFont [UIFont systemFontOfSize:12]
+#define HJSourceFont [UIFont systemFontOfSize:12]
+#define HJTextFont [UIFont systemFontOfSize:18]
+
+
 
