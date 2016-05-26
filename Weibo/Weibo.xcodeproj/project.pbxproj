@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		931089721CF6D0A300D665ED /* HJStatusTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 931089711CF6D0A300D665ED /* HJStatusTool.m */; };
+		931089751CF6D10E00D665ED /* HJStatusParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 931089741CF6D10E00D665ED /* HJStatusParam.m */; };
+		931089781CF6D13A00D665ED /* HJStatusResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 931089771CF6D13A00D665ED /* HJStatusResult.m */; };
+		9310897C1CF6D2AB00D665ED /* HJStatusCacheTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 9310897B1CF6D2AB00D665ED /* HJStatusCacheTool.m */; };
+		931089891CF6D4BE00D665ED /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 9310897F1CF6D4BE00D665ED /* FMDatabase.m */; };
+		9310898A1CF6D4BE00D665ED /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 931089811CF6D4BE00D665ED /* FMDatabaseAdditions.m */; };
+		9310898B1CF6D4BE00D665ED /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 931089831CF6D4BE00D665ED /* FMDatabasePool.m */; };
+		9310898C1CF6D4BE00D665ED /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 931089851CF6D4BE00D665ED /* FMDatabaseQueue.m */; };
+		9310898D1CF6D4BE00D665ED /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 931089881CF6D4BE00D665ED /* FMResultSet.m */; };
+		9310898F1CF6D76300D665ED /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9310898E1CF6D76300D665ED /* libsqlite3.0.tbd */; };
+		931089921CF6D82400D665ED /* HJUserTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 931089911CF6D82400D665ED /* HJUserTool.m */; };
+		931089951CF6D83C00D665ED /* HJUserParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 931089941CF6D83C00D665ED /* HJUserParam.m */; };
+		931089981CF6D86D00D665ED /* HJUserUnreadResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 931089971CF6D86D00D665ED /* HJUserUnreadResult.m */; };
 		933E5F8B1CF2D2B700C5F7BE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 933E5F8A1CF2D2B700C5F7BE /* main.m */; };
 		933E5F8E1CF2D2B700C5F7BE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 933E5F8D1CF2D2B700C5F7BE /* AppDelegate.m */; };
 		933E5F941CF2D2B700C5F7BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 933E5F921CF2D2B700C5F7BE /* Main.storyboard */; };
@@ -124,6 +137,32 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		931089701CF6D0A300D665ED /* HJStatusTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJStatusTool.h; sourceTree = "<group>"; };
+		931089711CF6D0A300D665ED /* HJStatusTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJStatusTool.m; sourceTree = "<group>"; };
+		931089731CF6D10E00D665ED /* HJStatusParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJStatusParam.h; sourceTree = "<group>"; };
+		931089741CF6D10E00D665ED /* HJStatusParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJStatusParam.m; sourceTree = "<group>"; };
+		931089761CF6D13A00D665ED /* HJStatusResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJStatusResult.h; sourceTree = "<group>"; };
+		931089771CF6D13A00D665ED /* HJStatusResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJStatusResult.m; sourceTree = "<group>"; };
+		9310897A1CF6D2AB00D665ED /* HJStatusCacheTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJStatusCacheTool.h; sourceTree = "<group>"; };
+		9310897B1CF6D2AB00D665ED /* HJStatusCacheTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJStatusCacheTool.m; sourceTree = "<group>"; };
+		9310897E1CF6D4BE00D665ED /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		9310897F1CF6D4BE00D665ED /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		931089801CF6D4BE00D665ED /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		931089811CF6D4BE00D665ED /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		931089821CF6D4BE00D665ED /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		931089831CF6D4BE00D665ED /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		931089841CF6D4BE00D665ED /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		931089851CF6D4BE00D665ED /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		931089861CF6D4BE00D665ED /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		931089871CF6D4BE00D665ED /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		931089881CF6D4BE00D665ED /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		9310898E1CF6D76300D665ED /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		931089901CF6D82400D665ED /* HJUserTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJUserTool.h; sourceTree = "<group>"; };
+		931089911CF6D82400D665ED /* HJUserTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJUserTool.m; sourceTree = "<group>"; };
+		931089931CF6D83C00D665ED /* HJUserParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJUserParam.h; sourceTree = "<group>"; };
+		931089941CF6D83C00D665ED /* HJUserParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJUserParam.m; sourceTree = "<group>"; };
+		931089961CF6D86D00D665ED /* HJUserUnreadResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJUserUnreadResult.h; sourceTree = "<group>"; };
+		931089971CF6D86D00D665ED /* HJUserUnreadResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJUserUnreadResult.m; sourceTree = "<group>"; };
 		933E5F861CF2D2B700C5F7BE /* Weibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		933E5F8A1CF2D2B700C5F7BE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		933E5F8C1CF2D2B700C5F7BE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -328,6 +367,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9310898F1CF6D76300D665ED /* libsqlite3.0.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,9 +388,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9310897D1CF6D4BE00D665ED /* fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				9310897E1CF6D4BE00D665ED /* FMDatabase.h */,
+				9310897F1CF6D4BE00D665ED /* FMDatabase.m */,
+				931089801CF6D4BE00D665ED /* FMDatabaseAdditions.h */,
+				931089811CF6D4BE00D665ED /* FMDatabaseAdditions.m */,
+				931089821CF6D4BE00D665ED /* FMDatabasePool.h */,
+				931089831CF6D4BE00D665ED /* FMDatabasePool.m */,
+				931089841CF6D4BE00D665ED /* FMDatabaseQueue.h */,
+				931089851CF6D4BE00D665ED /* FMDatabaseQueue.m */,
+				931089861CF6D4BE00D665ED /* FMDB.h */,
+				931089871CF6D4BE00D665ED /* FMResultSet.h */,
+				931089881CF6D4BE00D665ED /* FMResultSet.m */,
+			);
+			path = fmdb;
+			sourceTree = "<group>";
+		};
 		933E5F7D1CF2D2B700C5F7BE = {
 			isa = PBXGroup;
 			children = (
+				9310898E1CF6D76300D665ED /* libsqlite3.0.tbd */,
 				933E5F881CF2D2B700C5F7BE /* Weibo */,
 				933E5FA21CF2D2B700C5F7BE /* WeiboTests */,
 				933E5FAD1CF2D2B700C5F7BE /* WeiboUITests */,
@@ -701,6 +760,7 @@
 		936483601CF55788001D0E17 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				9310897D1CF6D4BE00D665ED /* fmdb */,
 				93A21EE41CF5DC70002966E3 /* MJRefresh */,
 				93A21ECC1CF5D77D002966E3 /* MJPhotoBrowser */,
 				93A21E9A1CF5D67B002966E3 /* SDWebImage */,
@@ -933,6 +993,14 @@
 		93A21EFD1CF5DED3002966E3 /* Status */ = {
 			isa = PBXGroup;
 			children = (
+				931089701CF6D0A300D665ED /* HJStatusTool.h */,
+				931089711CF6D0A300D665ED /* HJStatusTool.m */,
+				931089731CF6D10E00D665ED /* HJStatusParam.h */,
+				931089741CF6D10E00D665ED /* HJStatusParam.m */,
+				931089761CF6D13A00D665ED /* HJStatusResult.h */,
+				931089771CF6D13A00D665ED /* HJStatusResult.m */,
+				9310897A1CF6D2AB00D665ED /* HJStatusCacheTool.h */,
+				9310897B1CF6D2AB00D665ED /* HJStatusCacheTool.m */,
 			);
 			name = Status;
 			sourceTree = "<group>";
@@ -940,6 +1008,12 @@
 		93A21EFE1CF5DEDE002966E3 /* User */ = {
 			isa = PBXGroup;
 			children = (
+				931089901CF6D82400D665ED /* HJUserTool.h */,
+				931089911CF6D82400D665ED /* HJUserTool.m */,
+				931089931CF6D83C00D665ED /* HJUserParam.h */,
+				931089941CF6D83C00D665ED /* HJUserParam.m */,
+				931089961CF6D86D00D665ED /* HJUserUnreadResult.h */,
+				931089971CF6D86D00D665ED /* HJUserUnreadResult.m */,
 			);
 			name = User;
 			sourceTree = "<group>";
@@ -1080,9 +1154,11 @@
 			files = (
 				93A21EC21CF5D67B002966E3 /* SDWebImageDownloaderOperation.m in Sources */,
 				936483821CF5580D001D0E17 /* AFSecurityPolicy.m in Sources */,
+				931089951CF6D83C00D665ED /* HJUserParam.m in Sources */,
 				933E5FD31CF2E7A700C5F7BE /* UIView+Frame.m in Sources */,
 				9364838A1CF55A62001D0E17 /* HJAccountTool.m in Sources */,
 				933E5FC61CF2D50C00C5F7BE /* HJTabBarController.m in Sources */,
+				931089721CF6D0A300D665ED /* HJStatusTool.m in Sources */,
 				93A21EBD1CF5D67B002966E3 /* NSData+ImageContentType.m in Sources */,
 				936483691CF557FD001D0E17 /* MBProgressHUD.m in Sources */,
 				93A21EE01CF5D77D002966E3 /* MJPhotoProgressView.m in Sources */,
@@ -1090,6 +1166,7 @@
 				93A21E7C1CF5CF55002966E3 /* MJType.m in Sources */,
 				93A21EBE1CF5D67B002966E3 /* SDImageCache.m in Sources */,
 				93A21EDC1CF5D77D002966E3 /* MJPhoto.m in Sources */,
+				9310898B1CF6D4BE00D665ED /* FMDatabasePool.m in Sources */,
 				93A21EFB1CF5DC70002966E3 /* UIScrollView+MJRefresh.m in Sources */,
 				93A21EE31CF5D77D002966E3 /* SDWebImageManager+MJ.m in Sources */,
 				9364838D1CF55B1C001D0E17 /* HJAccountParam.m in Sources */,
@@ -1098,17 +1175,21 @@
 				936483831CF5580D001D0E17 /* AFURLConnectionOperation.m in Sources */,
 				93A21ECA1CF5D67B002966E3 /* UIImageView+WebCache.m in Sources */,
 				93A21EE21CF5D77D002966E3 /* MJPhotoView.m in Sources */,
+				931089751CF6D10E00D665ED /* HJStatusParam.m in Sources */,
 				93706A601CF419C0007C7341 /* HJSearchBar.m in Sources */,
 				933E5FF21CF338D800C5F7BE /* HJWeibocfg.m in Sources */,
 				93A21EF91CF5DC70002966E3 /* MJRefreshHeaderView.m in Sources */,
 				93A21E831CF5D102002966E3 /* NSDate+MJ.m in Sources */,
 				933E60111CF343E600C5F7BE /* HJDiscoverViewController.m in Sources */,
+				931089891CF6D4BE00D665ED /* FMDatabase.m in Sources */,
 				936483861CF5580D001D0E17 /* AFURLSessionManager.m in Sources */,
+				9310898D1CF6D4BE00D665ED /* FMResultSet.m in Sources */,
 				93A21E791CF5CF55002966E3 /* MJIvar.m in Sources */,
 				93A21E7A1CF5CF55002966E3 /* MJMember.m in Sources */,
 				93A21EC81CF5D67B002966E3 /* UIImage+WebP.m in Sources */,
 				93706A5D1CF418A3007C7341 /* UIImage+Resizable.m in Sources */,
 				93A21E571CF5CC87002966E3 /* HJStatus.m in Sources */,
+				9310898A1CF6D4BE00D665ED /* FMDatabaseAdditions.m in Sources */,
 				93A21E901CF5D595002966E3 /* HJRetweetedView.m in Sources */,
 				93706A631CF42D29007C7341 /* HJTitleButton.m in Sources */,
 				93A21E931CF5D5AF002966E3 /* HJToolBarView.m in Sources */,
@@ -1139,8 +1220,12 @@
 				93A21EC51CF5D67B002966E3 /* UIButton+WebCache.m in Sources */,
 				93A21EFA1CF5DC70002966E3 /* UIScrollView+MJExtension.m in Sources */,
 				93A21EBF1CF5D67B002966E3 /* SDWebImageCompat.m in Sources */,
+				931089981CF6D86D00D665ED /* HJUserUnreadResult.m in Sources */,
+				9310898C1CF6D4BE00D665ED /* FMDatabaseQueue.m in Sources */,
 				933E5FEC1CF3332200C5F7BE /* HJAccount.m in Sources */,
 				93A21E7B1CF5CF55002966E3 /* MJMethod.m in Sources */,
+				931089921CF6D82400D665ED /* HJUserTool.m in Sources */,
+				9310897C1CF6D2AB00D665ED /* HJStatusCacheTool.m in Sources */,
 				93A21E781CF5CF55002966E3 /* MJFoundation.m in Sources */,
 				936483811CF5580D001D0E17 /* AFNetworkReachabilityManager.m in Sources */,
 				93A21E5A1CF5CDC4002966E3 /* HJUser.m in Sources */,
@@ -1152,6 +1237,7 @@
 				93A21E991CF5D5F2002966E3 /* HJPhotoView.m in Sources */,
 				93706A6B1CF43DCF007C7341 /* HJNewFeatureController.m in Sources */,
 				93A21E5D1CF5CED7002966E3 /* HJPhoto.m in Sources */,
+				931089781CF6D13A00D665ED /* HJStatusResult.m in Sources */,
 				933E60141CF3441F00C5F7BE /* HJHomeViewController.m in Sources */,
 				936483901CF55D7A001D0E17 /* HJHttpTool.m in Sources */,
 				933E5FEF1CF3374D00C5F7BE /* HJOauthViewController.m in Sources */,

@@ -13,14 +13,11 @@
 #import "HJUser.h"
 #import "HJStatusFrame.h"
 #import "HJStatusCell.h"
+#import "HJStatusTool.h"
 
 #import "MJRefresh.h"
 #import "UIImageView+WebCache.h"
 
-#import "AFNetworking.h"
-#import "HJAccountTool.h"
-#import "HJAccount.h"
-#import "MJExtension.h"
 
 const int navHeight = 64;
 
