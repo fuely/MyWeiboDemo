@@ -17,6 +17,11 @@
 #import "MJRefresh.h"
 #import "UIImageView+WebCache.h"
 
+#import "AFNetworking.h"
+#import "HJAccountTool.h"
+#import "HJAccount.h"
+#import "MJExtension.h"
+
 const int navHeight = 64;
 
 @interface HJHomeViewController ()
@@ -68,6 +73,7 @@ const int navHeight = 64;
 
 - (void)loadMoreStatuses
 {
+    /*
     HJStatusFrame *statusF = [self.statusFrameArr lastObject];
     id maxID = nil;
     if (statusF.status.idstr) {
@@ -83,7 +89,7 @@ const int navHeight = 64;
     } failure:^(NSError *error) {
         
     }];
-    
+     */
 }
 
 - (void)refresh
@@ -94,6 +100,7 @@ const int navHeight = 64;
 
 - (void)loadNewStatuses
 {
+/*
     HJStatusFrame *statusF = [self.statusFrameArr firstObject];
     id sinceID = nil;
     if (statusF.status.idstr) {
@@ -111,6 +118,23 @@ const int navHeight = 64;
         [self.tableView reloadData];
         [self.tableView headerEndRefreshing];
     } failure:^(NSError *error) {
+        
+    }];
+*/
+    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"access_token"] = [HJAccountTool account].access_token;
+    
+    
+    [mgr GET:@"https://api.weibo.com/2/statuses/friends_timeline.json" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        //把字典数组转换成模型数组
+        NSArray *dictArr = responseObject[@"statuses"];
+        self.statusFrameArr = (NSMutableArray *)[HJStatus objectArrayWithKeyValuesArray:dictArr];
+        [self.tableView reloadData];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
     }];
     
@@ -207,13 +231,30 @@ const int navHeight = 64;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+
+    /*
     // 创建cell
     HJStatusCell *cell = [HJStatusCell cellWithTableView:tableView];
     
     HJStatusFrame *statusF =  self.statusFrameArr[indexPath.row];
     
     cell.statusF = statusF;
+     */
+    static NSString *ID = @"cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
+    }
+    
+    //获取模型
+    HJStatus *status = self.statusFrameArr[indexPath.row];
+    
+    //用户昵称
+    cell.textLabel.text = status.user.name;
+    [cell.imageView sd_setImageWithURL:status.user.profile_image_url placeholderImage:[UIImage imageNamed:@"timeline_image_placeholder"]];
+    cell.detailTextLabel.text = status.text;
+    
     
     return cell;
     
@@ -227,12 +268,12 @@ const int navHeight = 64;
 //    [self.navigationController pushViewController:one animated:YES];
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    HJStatusFrame *statusF =  self.statusFrameArr[indexPath.row];
-    
-    return statusF.cellHeight;
-}
+//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    HJStatusFrame *statusF =  self.statusFrameArr[indexPath.row];
+//    
+//    return statusF.cellHeight;
+//}
 
 
 @end
