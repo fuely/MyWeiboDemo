@@ -73,7 +73,11 @@ const int navHeight = 64;
 
 - (void)loadMoreStatuses
 {
-    /*
+/**
+     越新的微博,id越大,第一个微博的id最大,因为显示在最上面,一般最上面就是最新,
+     所以判断比第一条id大的就是新的微博数据 Max_id
+     若指定此参数，则返回ID小于或等于max_id的微博，默认为0
+*/
     HJStatusFrame *statusF = [self.statusFrameArr lastObject];
     id maxID = nil;
     if (statusF.status.idstr) {
@@ -82,6 +86,7 @@ const int navHeight = 64;
     
     [HJStatusTool moreStatusesWithID:maxID success:^(NSArray *statusFrameArr) {
         
+        //把数组中的元素添加进去
         [self.statusFrameArr addObjectsFromArray:statusFrameArr];
         
         [self.tableView reloadData];
@@ -89,7 +94,6 @@ const int navHeight = 64;
     } failure:^(NSError *error) {
         
     }];
-     */
 }
 
 - (void)refresh
@@ -100,7 +104,11 @@ const int navHeight = 64;
 
 - (void)loadNewStatuses
 {
-/*
+/**
+    越新的微博,id越大,第一个微博的id最大,因为显示在最上面,一般最上面就是最新,
+    所以判断比第一条id大的就是新的微博数据 since_id
+    若指定此参数，则返回ID比since_id大的微博（即比since_id时间晚的微博），默认为0。
+*/
     HJStatusFrame *statusF = [self.statusFrameArr firstObject];
     id sinceID = nil;
     if (statusF.status.idstr) {
@@ -112,6 +120,7 @@ const int navHeight = 64;
         NSInteger count = statusFrameArr.count;
         [self showNewStatusesCount:count];
         
+        //把最新的微博数插入到最上面
         NSIndexSet *indexSet = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, count)];
         [self.statusFrameArr insertObjects:statusFrameArr atIndexes:indexSet];
         
@@ -120,24 +129,6 @@ const int navHeight = 64;
     } failure:^(NSError *error) {
         
     }];
-*/
-    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
-    
-    NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    params[@"access_token"] = [HJAccountTool account].access_token;
-    
-    
-    [mgr GET:@"https://api.weibo.com/2/statuses/friends_timeline.json" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
-        //把字典数组转换成模型数组
-        NSArray *dictArr = responseObject[@"statuses"];
-        self.statusFrameArr = (NSMutableArray *)[HJStatus objectArrayWithKeyValuesArray:dictArr];
-        [self.tableView reloadData];
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
-    }];
-    
 }
 
 // 显示最新微博数
@@ -231,30 +222,12 @@ const int navHeight = 64;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
-    /*
     // 创建cell
     HJStatusCell *cell = [HJStatusCell cellWithTableView:tableView];
     
     HJStatusFrame *statusF =  self.statusFrameArr[indexPath.row];
     
     cell.statusF = statusF;
-     */
-    static NSString *ID = @"cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-    
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
-    }
-    
-    //获取模型
-    HJStatus *status = self.statusFrameArr[indexPath.row];
-    
-    //用户昵称
-    cell.textLabel.text = status.user.name;
-    [cell.imageView sd_setImageWithURL:status.user.profile_image_url placeholderImage:[UIImage imageNamed:@"timeline_image_placeholder"]];
-    cell.detailTextLabel.text = status.text;
-    
     
     return cell;
     
@@ -268,12 +241,12 @@ const int navHeight = 64;
 //    [self.navigationController pushViewController:one animated:YES];
 }
 
-//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    HJStatusFrame *statusF =  self.statusFrameArr[indexPath.row];
-//    
-//    return statusF.cellHeight;
-//}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    HJStatusFrame *statusF =  self.statusFrameArr[indexPath.row];
+    
+    return statusF.cellHeight;
+}
 
 
 @end
