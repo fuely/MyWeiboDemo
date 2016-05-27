@@ -31,29 +31,9 @@
     param.access_token = [HJAccountTool account].access_token;
     param.since_id = ID;
     
-#warning  先从缓存中获取数据
-    //    NSArray *statuses =  [IWStatusCacheTool statusesWithParam:param];
-    //    if (statuses.count) {
-    //
-    //        NSMutableArray *arrM = [NSMutableArray array];
-    //        for (IWStatus *status in statuses) {
-    //            IWStatusFrame *statusF = [[IWStatusFrame alloc] init];
-    //            statusF.status = status;
-    //            [arrM addObject:statusF];
-    //        }
-    //        if (success) {
-    //            success(arrM);
-    //        }
-    //
-    //        // 不需要在发送请求
-    //        return;
-    //    }
-    
-    
     // 发送请求
     [HJHttpTool get:@"https://api.weibo.com/2/statuses/friends_timeline.json" parameters:param.keyValues success:^(id responseObject) {
         
-#warning  存储数据
         [HJStatusCacheTool saveWithStatuses:responseObject[@"statuses"]];
         
         HJStatusResult *result = [HJStatusResult objectWithKeyValues:responseObject];
@@ -88,7 +68,7 @@
     HJStatusParam *param = [[HJStatusParam alloc] init];
     param.access_token = [HJAccountTool account].access_token;
     param.max_id = ID;
-    
+#warning  先从缓存中获取数据
     // 加载缓存数据
     NSArray *statuses =  [HJStatusCacheTool statusesWithParam:param];
     if (statuses.count) {
@@ -107,7 +87,7 @@
         return;
     }
     
-    
+#warning  存储数据
     // 发送请求
     [HJHttpTool get:@"https://api.weibo.com/2/statuses/friends_timeline.json" parameters:param.keyValues success:^(id responseObject) {
         
