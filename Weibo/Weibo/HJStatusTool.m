@@ -26,7 +26,7 @@
 
 + (void)newStatusesWithID:(id)ID success:(void (^)(NSArray *))success failure:(void (^)(NSError *))failure
 {
-    // 拼接参数
+    // 创建参数模型,拼接参数
     HJStatusParam *param = [[HJStatusParam alloc] init];
     param.access_token = [HJAccountTool account].access_token;
     param.since_id = ID;
@@ -36,9 +36,12 @@
         
         [HJStatusCacheTool saveWithStatuses:responseObject[@"statuses"]];
         
+        //字典转模型
         HJStatusResult *result = [HJStatusResult objectWithKeyValues:responseObject];
         
+        //模型转字典
         NSDictionary *plist = result.keyValues;
+        
         [plist writeToFile:HJStatusFile atomically:YES];
         
         

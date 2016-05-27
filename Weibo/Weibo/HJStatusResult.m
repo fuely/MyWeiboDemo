@@ -12,6 +12,7 @@
 
 @implementation HJStatusResult
 
+//实现这个方法将字典转模型
 - (NSDictionary *)objectClassInArray
 {
     return @{@"statuses":[HJStatus class]};

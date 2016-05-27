@@ -10,8 +10,13 @@
 
 @interface HJStatusResult : NSObject
 
+/**
+ *  用户最近的微博总数
+ */
 @property (nonatomic, assign) long long total_number;
-
+/**
+ *  用户微博数组(HJStatus)
+ */
 @property (nonatomic, strong) NSArray *statuses;
 
 @end
