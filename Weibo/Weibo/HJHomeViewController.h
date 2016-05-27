@@ -10,4 +10,6 @@
 
 @interface HJHomeViewController : UITableViewController
 
+- (void)refresh;
+
 @end

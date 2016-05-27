@@ -47,14 +47,12 @@
 @property (nonatomic, assign) int mention_cmt;
 
 /**
- *  消息为读数
+ *  消息的总和
  */
 - (int)messageCount;
 
 /**
  *  未读总数
- *
- *
  */
 - (int)totalCount;
 

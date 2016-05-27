@@ -16,6 +16,9 @@
 
 #import "HJTabBar.h"
 
+#import "HJUserTool.h"
+#import "HJUserUnreadResult.h"
+
 @interface HJTabBarController ()<HJTabBarDelegate>
 
 @property (nonatomic, weak) HJTabBar *customTabBar;
@@ -38,6 +41,32 @@
     
     // 2.添加子控制器
     [self setUpAllChildViewController];
+    
+    //每隔一段时间请求未读数
+    [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(requestUnRead) userInfo:nil repeats:YES];
+}
+
+//请求未读数时调用
+-(void)requestUnRead
+{
+    //请求微博的未度数
+    [HJUserTool unreadCountDidsuccess:^(HJUserUnreadResult *unread) {
+        
+        //设置首页未读数
+        _home.tabBarItem.badgeValue = [NSString stringWithFormat:@"%d",unread.status];
+        
+        //设置消息未读数
+        _message.tabBarItem.badgeValue = [NSString stringWithFormat:@"%d",unread.messageCount];
+        
+        //设置我的未读数
+        _profile.tabBarItem.badgeValue = [NSString stringWithFormat:@"%d",unread.follower];
+        
+        //设置应用程序的所有未读书
+        [UIApplication sharedApplication].applicationIconBadgeNumber = unread.totalCount;
+        
+    } failure:^(NSError *error) {
+        
+    }];
 
 }
 
@@ -103,11 +132,12 @@
     
 }
 
-// IWTabBar代理方法
+#pragma mark - 点击TabBar上的按钮调用
 - (void)tabBar:(HJTabBar *)tabBar didSelectedIndex:(NSInteger)selectedIndex
 {
     if (selectedIndex == 0 && selectedIndex == _selIndex ) { // 点击首页 刷新首页
         // 刷新数据
+        [_home refresh];
     }
     
     self.selectedIndex = selectedIndex;

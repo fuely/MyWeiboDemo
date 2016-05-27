@@ -63,6 +63,7 @@
 		93706A631CF42D29007C7341 /* HJTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 93706A621CF42D29007C7341 /* HJTitleButton.m */; };
 		93706A6B1CF43DCF007C7341 /* HJNewFeatureController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93706A6A1CF43DCF007C7341 /* HJNewFeatureController.m */; };
 		93706A6E1CF43DF7007C7341 /* HJNewFeatureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93706A6D1CF43DF7007C7341 /* HJNewFeatureCell.m */; };
+		9395AD5C1CF822AD0077E6C0 /* silence.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9395AD5B1CF822AD0077E6C0 /* silence.mp3 */; };
 		93A21E571CF5CC87002966E3 /* HJStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A21E561CF5CC87002966E3 /* HJStatus.m */; };
 		93A21E5A1CF5CDC4002966E3 /* HJUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A21E591CF5CDC4002966E3 /* HJUser.m */; };
 		93A21E5D1CF5CED7002966E3 /* HJPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A21E5C1CF5CED7002966E3 /* HJPhoto.m */; };
@@ -251,6 +252,7 @@
 		93706A6A1CF43DCF007C7341 /* HJNewFeatureController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJNewFeatureController.m; sourceTree = "<group>"; };
 		93706A6C1CF43DF7007C7341 /* HJNewFeatureCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJNewFeatureCell.h; sourceTree = "<group>"; };
 		93706A6D1CF43DF7007C7341 /* HJNewFeatureCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJNewFeatureCell.m; sourceTree = "<group>"; };
+		9395AD5B1CF822AD0077E6C0 /* silence.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = silence.mp3; sourceTree = "<group>"; };
 		93A21E551CF5CC87002966E3 /* HJStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJStatus.h; sourceTree = "<group>"; };
 		93A21E561CF5CC87002966E3 /* HJStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJStatus.m; sourceTree = "<group>"; };
 		93A21E581CF5CDC4002966E3 /* HJUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJUser.h; sourceTree = "<group>"; };
@@ -451,6 +453,7 @@
 		933E5F891CF2D2B700C5F7BE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9395AD5B1CF822AD0077E6C0 /* silence.mp3 */,
 				933E5F8A1CF2D2B700C5F7BE /* main.m */,
 			);
 			name = "Supporting Files";
@@ -1086,6 +1089,11 @@
 				TargetAttributes = {
 					933E5F851CF2D2B700C5F7BE = {
 						CreatedOnToolsVersion = 7.3.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					933E5F9E1CF2D2B700C5F7BE = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -1124,6 +1132,7 @@
 			files = (
 				933E5F991CF2D2B700C5F7BE /* LaunchScreen.storyboard in Resources */,
 				936483681CF557FD001D0E17 /* MBProgressHUD.bundle in Resources */,
+				9395AD5C1CF822AD0077E6C0 /* silence.mp3 in Resources */,
 				93A21EF51CF5DC70002966E3 /* MJRefresh.bundle in Resources */,
 				933E5F961CF2D2B700C5F7BE /* Assets.xcassets in Resources */,
 				933E5F941CF2D2B700C5F7BE /* Main.storyboard in Resources */,

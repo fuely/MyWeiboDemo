@@ -48,6 +48,7 @@
     param.uid = [HJAccountTool account].uid;
     
     [HJHttpTool get:@"https://rm.api.weibo.com/2/remind/unread_count.json" parameters:param.keyValues success:^(id responseObject) {
+        //字典转模型
         HJUserUnreadResult *userUnread = [HJUserUnreadResult objectWithKeyValues:responseObject];
         if (success) {
             success(userUnread);
