@@ -8,6 +8,8 @@
 
 #import "HJAccount.h"
 
+#import "MJExtension.h"
+
 #define HJAccessTokenKey @"access_token"
 #define HJExpiresInKey @"expires_in"
 #define HJExpiresTimeKey @"expires_time"
@@ -15,6 +17,9 @@
 #define HJNameKey @"name"
 
 @implementation HJAccount
+
+//底层遍历当前类的所有属性,一个一个归档和解档
+MJCodingImplementation
 
 + (instancetype)accountWithDict:(NSDictionary *)dict
 {
@@ -34,7 +39,7 @@
     NSDate *date = [NSDate date];
     _expires_time = [date dateByAddingTimeInterval:[expires_in longLongValue]];
 }
-
+/*
 //归档的时候调用:告诉系统哪个属性需要归档,如何归档
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
@@ -58,6 +63,7 @@
     }
     return self;
 }
+*/
 
 
 @end

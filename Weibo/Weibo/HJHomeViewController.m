@@ -11,9 +11,13 @@
 
 #import "HJStatus.h"
 #import "HJUser.h"
+#import "HJUserTool.h"
 #import "HJStatusFrame.h"
 #import "HJStatusCell.h"
 #import "HJStatusTool.h"
+
+#import "HJAccount.h"
+#import "HJAccountTool.h"
 
 #import "MJRefresh.h"
 #import "UIImageView+WebCache.h"
@@ -181,6 +185,30 @@ const int navHeight = 64;
     _titleButton = titleButton;
     
     self.navigationItem.titleView = titleButton;
+    
+    // 获取标题
+    NSString *titleName = [HJAccountTool account].name?:@"首页";
+    
+    if (titleName == nil) { // 没有标题
+        //获取微博昵称
+        [HJUserTool userInfoDidsuccess:^(HJUser *user) {
+        //设置导航条的标题
+        [titleButton setTitle:user.name forState:UIControlStateNormal];
+        
+        //获取当前账号
+        HJAccount *account = [HJAccountTool account];
+        account.name = user.name;
+        //保存用户名称
+        [HJAccountTool saveAccount:account];
+        
+    } failure:^(NSError *error) {
+        
+    }];
+    }else{ // 有标题
+        [titleButton setTitle:titleName forState:UIControlStateNormal];
+    }
+    
+   
     
 }
 
