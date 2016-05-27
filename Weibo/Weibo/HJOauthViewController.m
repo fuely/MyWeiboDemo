@@ -57,12 +57,11 @@
     return YES;
 }
 
+#pragma  mark - 换取accessToken
 - (void)accessTokenWithCode:(NSString *)code
 {
     // 获取accessToken
-    [HJAccountTool accessTokenWithCode:code success:^(HJAccount *account) {
-        // 保存账号
-        [HJAccountTool saveAccount:account];
+    [HJAccountTool accessTokenWithCode:code success:^() {
         // 选择跟控制器
         [HJGuideTool guideRootViewController:HJKeyWindow];
         

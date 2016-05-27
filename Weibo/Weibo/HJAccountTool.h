@@ -16,6 +16,6 @@
 
 + (HJAccount *)account;
 
-+ (void)accessTokenWithCode:(NSString *)code success:(void (^)(HJAccount *account))success failure:(void (^)(NSError *))failure;
++ (void)accessTokenWithCode:(NSString *)code success:(void (^)())success failure:(void (^)(NSError *))failure;
 
 @end

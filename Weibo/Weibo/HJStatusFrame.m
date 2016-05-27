@@ -102,7 +102,7 @@
     if (_status.pic_urls.count) { // 有配图
         CGFloat photosX = HJCellMargin;
         CGFloat photosY = originH;
-        CGSize photosSize = [HJPhotosView photosSizeWithCount:_status.pic_urls.count];
+        CGSize photosSize = [HJPhotosView photosSizeWithCount:(int)_status.pic_urls.count];
         _photosViewF = (CGRect){{photosX,photosY},photosSize};
         
         originH = CGRectGetMaxY(_photosViewF) + HJCellMargin;
