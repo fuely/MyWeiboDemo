@@ -22,9 +22,6 @@
 #import "MJRefresh.h"
 #import "UIImageView+WebCache.h"
 
-
-const int navHeight = 64;
-
 @interface HJHomeViewController ()
 
 @property (nonatomic, strong) NSMutableArray *statusFrameArr;
@@ -138,22 +135,23 @@ const int navHeight = 64;
     if (count == 0) return;
     CGFloat labelH = 35;
     CGFloat labelW = self.view.width;
-    CGFloat labelY = navHeight - labelH;
+    //取导航条高度,设labelY
+    CGFloat labelY = CGRectGetMaxY(self.navigationController.navigationBar.frame) - labelH;
     UILabel *statusLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, labelY, labelW, labelH)];
     
     statusLabel.text = [NSString stringWithFormat:@"%ld条新微博",count];
     statusLabel.textAlignment = NSTextAlignmentCenter;
     statusLabel.textColor = [UIColor whiteColor];
     statusLabel.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"timeline_new_status_background"]];
-    
+    //插入到导航控制器下面
     [self.navigationController.view insertSubview:statusLabel belowSubview:self.navigationController.navigationBar];
     
-    
+    //动画平移
     [UIView animateWithDuration:0.5 animations:^{
         
         statusLabel.transform = CGAffineTransformMakeTranslation(0, labelY);
     } completion:^(BOOL finished) {
-        
+        //动画返回
         [UIView animateWithDuration:0.5 delay:1 options:UIViewAnimationOptionCurveLinear animations:^{
             statusLabel.transform = CGAffineTransformIdentity;
             
