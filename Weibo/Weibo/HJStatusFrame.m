@@ -58,6 +58,7 @@
     CGFloat nameY = iconY;
     NSMutableDictionary *nameDict = [NSMutableDictionary dictionary];
     nameDict[NSFontAttributeName] = HJNameFont;
+    //根据昵称计算宽高
     CGSize nameSize = [_status.user.name sizeWithAttributes:nameDict];
     _nameViewF = (CGRect){{nameX,nameY},nameSize};
     

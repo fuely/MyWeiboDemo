@@ -390,6 +390,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		930007251CF958BE009CD88F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				93A21E881CF5D31E002966E3 /* HJStatusFrame.h */,
+				93A21E891CF5D31E002966E3 /* HJStatusFrame.m */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
 		9310897D1CF6D4BE00D665ED /* fmdb */ = {
 			isa = PBXGroup;
 			children = (
@@ -628,14 +637,13 @@
 		933E5FF71CF33FCD00C5F7BE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				930007251CF958BE009CD88F /* ViewModel */,
 				93A21E551CF5CC87002966E3 /* HJStatus.h */,
 				93A21E561CF5CC87002966E3 /* HJStatus.m */,
 				93A21E581CF5CDC4002966E3 /* HJUser.h */,
 				93A21E591CF5CDC4002966E3 /* HJUser.m */,
 				93A21E5B1CF5CED7002966E3 /* HJPhoto.h */,
 				93A21E5C1CF5CED7002966E3 /* HJPhoto.m */,
-				93A21E881CF5D31E002966E3 /* HJStatusFrame.h */,
-				93A21E891CF5D31E002966E3 /* HJStatusFrame.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";

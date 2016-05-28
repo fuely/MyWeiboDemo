@@ -33,10 +33,10 @@
  */
 - (BOOL)isYesterday
 {
-    // 2014-05-01
+    // 1.获得当前时间的年月日
     NSDate *nowDate = [[NSDate date] dateWithYMD];
     
-    // 2014-04-30
+    // 2.获得self的年月日
     NSDate *selfDate = [self dateWithYMD];
     
     // 获得nowDate和selfDate的差距

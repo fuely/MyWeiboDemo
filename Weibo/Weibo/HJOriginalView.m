@@ -92,19 +92,19 @@
     
     self.frame = statusF.originalViewF;
     
-    HJStatus *s = statusF.status;
+    HJStatus *status = statusF.status;
     
     // 头像
-    [_iconView sd_setImageWithURL:s.user.profile_image_url placeholderImage:[UIImage imageNamed:@"timeline_image_placeholder"]];
+    [_iconView sd_setImageWithURL:status.user.profile_image_url placeholderImage:[UIImage imageNamed:@"timeline_image_placeholder"]];
     _iconView.frame = statusF.iconViewF;
     
     // 昵称
-    _nameLabel.text = s.user.name;
+    _nameLabel.text = statusF.status.user.name;
     _nameLabel.frame = statusF.nameViewF;
     
     // 会员
-    if (s.user.isVip) { // 是会员
-        NSString *vipName = [NSString stringWithFormat:@"common_icon_membership_level%d",s.user.mbrank];
+    if (status.user.isVip) { // 是会员
+        NSString *vipName = [NSString stringWithFormat:@"common_icon_membership_level%d",status.user.mbrank];
         _vipView.image = [UIImage imageNamed:vipName];
         _vipView.frame = statusF.vipViewF;
         _vipView.hidden = NO;
@@ -119,37 +119,37 @@
     CGFloat timeY = CGRectGetMaxY(statusF.nameViewF) ;
     NSMutableDictionary *timeDict = [NSMutableDictionary dictionary];
     timeDict[NSFontAttributeName] = HJTimeFont;
-    CGSize timeSize = [s.created_at sizeWithAttributes:timeDict];
+    CGSize timeSize = [status.created_at sizeWithAttributes:timeDict];
     _timeLabel.frame = (CGRect){{timeX,timeY},timeSize};
     
     // 微博时间
-    _timeLabel.text = s.created_at;
-    if ([s.created_at isEqualToString:@"刚刚"]) {
+    _timeLabel.text = status.created_at;
+    if ([status.created_at isEqualToString:@"刚刚"]) {
         _timeLabel.textColor = [UIColor orangeColor];
     }else{
         _timeLabel.textColor = [UIColor lightGrayColor];
     }
     
     // 来源
-    _sourceLabel.text = s.source;
+    _sourceLabel.text = status.source;
     
     // 来源frame
     CGFloat sourceX = CGRectGetMaxX(_timeLabel.frame) + HJCellMargin;
     CGFloat sourceY = timeY;
     NSMutableDictionary *sourceDict = [NSMutableDictionary dictionary];
     sourceDict[NSFontAttributeName] = HJSourceFont;
-    CGSize sourceSize = [s.source sizeWithAttributes:sourceDict];
+    CGSize sourceSize = [status.source sizeWithAttributes:sourceDict];
     _sourceLabel.frame = (CGRect){{sourceX,sourceY},sourceSize};
     
     
     // 内容
-    _textLabel.text= s.text;
+    _textLabel.text= status.text;
     _textLabel.frame = statusF.textViewF;
     
     
     // 配图
-    if (s.pic_urls.count) { // 有配图
-        _photosView.pic_urls = s.pic_urls;
+    if (status.pic_urls.count) { // 有配图
+        _photosView.pic_urls = status.pic_urls;
         _photosView.frame = statusF.photosViewF;
         _photosView.hidden = NO;
     }else{

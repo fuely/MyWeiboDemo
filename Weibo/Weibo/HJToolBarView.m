@@ -88,6 +88,20 @@
     return btn;
 }
 
+- (void)clickBtn:(UIButton *)btn
+{
+    if (btn == _unlike) {
+        [btn setTitleColor:[UIColor orangeColor] forState:UIControlStateSelected];
+        if (btn.selected) {
+            [self setBtnTitleWithCount:_status.attitudes_count originalTitle:@"赞" setBtn:_unlike];
+            btn.selected = NO;
+        }else{
+            [self setBtnTitleWithCount:_status.attitudes_count+1 originalTitle:@"赞" setBtn:_unlike];
+            btn.selected = YES;
+        }
+    }
+}
+
 - (void)layoutSubviews
 {
     [super layoutSubviews];
@@ -118,16 +132,17 @@
     _status = status;
     
     // 转发
-    [self setBtnTitleWithCount:status.reposts_count originalTitle:@"转发"];
+    [self setBtnTitleWithCount:status.reposts_count originalTitle:@"转发" setBtn:_retweet];
     // 评论
-    [self setBtnTitleWithCount:status.comments_count originalTitle:@"评论"];
+    [self setBtnTitleWithCount:status.comments_count originalTitle:@"评论" setBtn:_comment];
     // 赞
-    [self setBtnTitleWithCount:status.attitudes_count originalTitle:@"赞"];
+    [self setBtnTitleWithCount:status.attitudes_count originalTitle:@"赞" setBtn:_unlike];
     
     
 }
 
-- (void)setBtnTitleWithCount:(int)count originalTitle:(NSString *)title
+#pragma mark - 设置转发,评论,赞的数目
+- (void)setBtnTitleWithCount:(int)count originalTitle:(NSString *)title setBtn:(UIButton *)btn
 {
     if (count) {
         
@@ -137,14 +152,14 @@
             
             title = [title stringByReplacingOccurrencesOfString:@".0" withString:@""];
             
-            [_retweet setTitle:title forState:UIControlStateNormal];
+            [btn setTitle:title forState:UIControlStateNormal];
         }else{
             
-            [_retweet setTitle:[NSString stringWithFormat:@"%d",count] forState:UIControlStateNormal];
+            [btn setTitle:[NSString stringWithFormat:@"%d",count] forState:UIControlStateNormal];
         }
         
     }else{
-        [_retweet setTitle:title forState:UIControlStateNormal];
+        [btn setTitle:title forState:UIControlStateNormal];
     }
 }
 

@@ -24,6 +24,9 @@
 
 @interface HJHomeViewController ()
 
+/**
+ * HJStatusFrame
+ */
 @property (nonatomic, strong) NSMutableArray *statusFrameArr;
 @property (nonatomic, weak) HJTitleButton *titleButton;
 
@@ -52,6 +55,7 @@
     [self.tableView headerBeginRefreshing];
     
     self.tableView.backgroundColor = HJColor(211, 211, 211);
+    //取消分割线
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
@@ -69,6 +73,7 @@
     }];
 }
 
+#pragma mark - 请求更多旧的微博数据
 - (void)loadMoreStatuses
 {
 /**
@@ -99,7 +104,7 @@
     [self.tableView headerBeginRefreshing];
 }
 
-
+#pragma mark - 请求新的微博数据
 - (void)loadNewStatuses
 {
 /**

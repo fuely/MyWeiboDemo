@@ -69,21 +69,21 @@
 - (void)setStatusF:(HJStatusFrame *)statusF
 {
     _statusF = statusF;
-    HJStatus *s = statusF.status;
+    HJStatus *status = statusF.status;
     
     self.frame = statusF.retweetedViewF;
     
     // 昵称
-    _nameLabel.text = [NSString stringWithFormat:@"@%@",s.retweeted_status.user.name];
+    _nameLabel.text = [NSString stringWithFormat:@"@%@",status.retweeted_status.user.name];
     _nameLabel.frame = statusF.retweetNameViewF;
     
     // 内容
-    _textLabel.text= s.retweeted_status.text;
+    _textLabel.text= status.retweeted_status.text;
     _textLabel.frame = statusF.retweetTextViewF;
     
     // 配图
-    if (s.retweeted_status.pic_urls.count) { // 有配图
-        _photosView.pic_urls = s.retweeted_status.pic_urls;
+    if (status.retweeted_status.pic_urls.count) { // 有配图
+        _photosView.pic_urls = status.retweeted_status.pic_urls;
         _photosView.frame = statusF.retweetPhotosViewF;
         _photosView.hidden = NO;
     }else{

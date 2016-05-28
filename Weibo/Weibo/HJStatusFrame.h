@@ -4,7 +4,7 @@
 //
 //  Created by 傅韩建 on 16/5/25.
 //  Copyright © 2016年 HanJian-F. All rights reserved.
-//
+//  模型 + 对应控件的Frame
 
 #import <Foundation/Foundation.h>
 
@@ -77,7 +77,9 @@
  */
 @property (nonatomic, assign) CGRect retweetPhotosViewF;
 
-
+/**
+ *  微博数据
+ */
 @property (nonatomic, strong) HJStatus *status;
 
 /**
