@@ -29,7 +29,9 @@
     // 创建参数模型,拼接参数
     HJStatusParam *param = [[HJStatusParam alloc] init];
     param.access_token = [HJAccountTool account].access_token;
-    param.since_id = ID;
+    if (ID) {
+        param.since_id = ID;
+    }
     
     // 发送请求
     [HJHttpTool get:@"https://api.weibo.com/2/statuses/friends_timeline.json" parameters:param.keyValues success:^(id responseObject) {
@@ -70,51 +72,50 @@
     // 拼接参数
     HJStatusParam *param = [[HJStatusParam alloc] init];
     param.access_token = [HJAccountTool account].access_token;
-    param.max_id = ID;
-#warning  先从缓存中获取数据
-    // 加载缓存数据
-    NSArray *statuses =  [HJStatusCacheTool statusesWithParam:param];
-    if (statuses.count) {
-        
-        NSMutableArray *arrM = [NSMutableArray array];
-        for (HJStatus *status in statuses) {
-            HJStatusFrame *statusF = [[HJStatusFrame alloc] init];
-            statusF.status = status;
-            [arrM addObject:statusF];
-        }
-        if (success) {
-            success(arrM);
-        }
-        
-        // 不需要在发送请求
-        return;
+    if (ID) {
+        param.max_id = ID;
     }
-    
-#warning  存储数据
-    // 发送请求
-    [HJHttpTool get:@"https://api.weibo.com/2/statuses/friends_timeline.json" parameters:param.keyValues success:^(id responseObject) {
-        
-        // 存储数据
-        [HJStatusCacheTool saveWithStatuses:responseObject[@"statuses"]];
-        
-        HJStatusResult *result = [HJStatusResult objectWithKeyValues:responseObject];
-        
-        NSMutableArray *arrM = [NSMutableArray array];
-        for (HJStatus *status in result.statuses) {
-            HJStatusFrame *statusF = [[HJStatusFrame alloc] init];
-            statusF.status = status;
-            [arrM addObject:statusF];
-        }
-        if (success) {
-            success(arrM);
-        }
-        
-    } failure:^(NSError *error) {
-        if (failure) {
-            failure(error);
-        }
-    }];
-    
+//#warning  先从缓存中获取数据
+//    // 加载缓存数据
+//    NSArray *statuses =  [HJStatusCacheTool statusesWithParam:param];
+//    if (statuses.count) {
+//        
+//        NSMutableArray *arrM = [NSMutableArray array];
+//        for (HJStatus *status in statuses) {
+//            HJStatusFrame *statusF = [[HJStatusFrame alloc] init];
+//            statusF.status = status;
+//            [arrM addObject:statusF];
+//        }
+//        if (success) {
+//            success(arrM);
+//        }
+//        
+//        // 不需要在发送请求
+//        return;
+//    }
+        // 发送请求
+        [HJHttpTool get:@"https://api.weibo.com/2/statuses/friends_timeline.json" parameters:param.keyValues success:^(id responseObject) {
+            
+            // 存储数据
+            [HJStatusCacheTool saveWithStatuses:responseObject[@"statuses"]];
+            
+            HJStatusResult *result = [HJStatusResult objectWithKeyValues:responseObject];
+            
+            NSMutableArray *arrM = [NSMutableArray array];
+            for (HJStatus *status in result.statuses) {
+                HJStatusFrame *statusF = [[HJStatusFrame alloc] init];
+                statusF.status = status;
+                [arrM addObject:statusF];
+            }
+            if (success) {
+                success(arrM);
+            }
+            
+        } failure:^(NSError *error) {
+            if (failure) {
+                failure(error);
+            }
+        }];
 
 }
 

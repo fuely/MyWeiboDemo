@@ -14,6 +14,8 @@
 #import "HJProfileViewController.h"
 #import "HJNavViewController.h"
 
+#import "HJComposeViewController.h"
+
 #import "HJTabBar.h"
 
 #import "HJUserTool.h"
@@ -145,6 +147,12 @@
     _selIndex = selectedIndex;
 }
 
+- (void)tabBarDidClickAddBtn:(HJTabBar *)tabBar
+{
+    HJComposeViewController *compose = [[HJComposeViewController alloc] init];
+    HJNavViewController *nav = [[HJNavViewController alloc] initWithRootViewController:compose];
+    [self presentViewController:nav animated:YES completion:nil];
+}
 
 
 @end

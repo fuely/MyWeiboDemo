@@ -64,6 +64,9 @@
 		93706A6B1CF43DCF007C7341 /* HJNewFeatureController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93706A6A1CF43DCF007C7341 /* HJNewFeatureController.m */; };
 		93706A6E1CF43DF7007C7341 /* HJNewFeatureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93706A6D1CF43DF7007C7341 /* HJNewFeatureCell.m */; };
 		9395AD5C1CF822AD0077E6C0 /* silence.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9395AD5B1CF822AD0077E6C0 /* silence.mp3 */; };
+		9397CB331CFACFDE006A362B /* HJComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9397CB321CFACFDE006A362B /* HJComposeViewController.m */; };
+		9397CB361CFAD4AB006A362B /* HJComposeTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9397CB351CFAD4AB006A362B /* HJComposeTextView.m */; };
+		9397CB391CFAE018006A362B /* HJTitleLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9397CB381CFAE018006A362B /* HJTitleLabel.m */; };
 		93A21E571CF5CC87002966E3 /* HJStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A21E561CF5CC87002966E3 /* HJStatus.m */; };
 		93A21E5A1CF5CDC4002966E3 /* HJUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A21E591CF5CDC4002966E3 /* HJUser.m */; };
 		93A21E5D1CF5CED7002966E3 /* HJPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A21E5C1CF5CED7002966E3 /* HJPhoto.m */; };
@@ -253,6 +256,12 @@
 		93706A6C1CF43DF7007C7341 /* HJNewFeatureCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJNewFeatureCell.h; sourceTree = "<group>"; };
 		93706A6D1CF43DF7007C7341 /* HJNewFeatureCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJNewFeatureCell.m; sourceTree = "<group>"; };
 		9395AD5B1CF822AD0077E6C0 /* silence.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = silence.mp3; sourceTree = "<group>"; };
+		9397CB311CFACFDE006A362B /* HJComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJComposeViewController.h; sourceTree = "<group>"; };
+		9397CB321CFACFDE006A362B /* HJComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJComposeViewController.m; sourceTree = "<group>"; };
+		9397CB341CFAD4AB006A362B /* HJComposeTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJComposeTextView.h; sourceTree = "<group>"; };
+		9397CB351CFAD4AB006A362B /* HJComposeTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJComposeTextView.m; sourceTree = "<group>"; };
+		9397CB371CFAE018006A362B /* HJTitleLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJTitleLabel.h; sourceTree = "<group>"; };
+		9397CB381CFAE018006A362B /* HJTitleLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJTitleLabel.m; sourceTree = "<group>"; };
 		93A21E551CF5CC87002966E3 /* HJStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJStatus.h; sourceTree = "<group>"; };
 		93A21E561CF5CC87002966E3 /* HJStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJStatus.m; sourceTree = "<group>"; };
 		93A21E581CF5CDC4002966E3 /* HJUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJUser.h; sourceTree = "<group>"; };
@@ -441,6 +450,7 @@
 		933E5F881CF2D2B700C5F7BE /* Weibo */ = {
 			isa = PBXGroup;
 			children = (
+				9397CB2D1CFACF74006A362B /* Compose */,
 				93706A651CF43D6D007C7341 /* NewFeature */,
 				933E5FF31CF33B4E00C5F7BE /* Tool */,
 				933E5FE61CF3328B00C5F7BE /* Oauth */,
@@ -866,6 +876,43 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
+		9397CB2D1CFACF74006A362B /* Compose */ = {
+			isa = PBXGroup;
+			children = (
+				9397CB301CFACF93006A362B /* Controller */,
+				9397CB2F1CFACF8D006A362B /* View */,
+				9397CB2E1CFACF83006A362B /* Model */,
+			);
+			name = Compose;
+			sourceTree = "<group>";
+		};
+		9397CB2E1CFACF83006A362B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		9397CB2F1CFACF8D006A362B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9397CB341CFAD4AB006A362B /* HJComposeTextView.h */,
+				9397CB351CFAD4AB006A362B /* HJComposeTextView.m */,
+				9397CB371CFAE018006A362B /* HJTitleLabel.h */,
+				9397CB381CFAE018006A362B /* HJTitleLabel.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		9397CB301CFACF93006A362B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9397CB311CFACFDE006A362B /* HJComposeViewController.h */,
+				9397CB321CFACFDE006A362B /* HJComposeViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		93A21E5E1CF5CF55002966E3 /* MJExtension */ = {
 			isa = PBXGroup;
 			children = (
@@ -1174,7 +1221,9 @@
 				931089951CF6D83C00D665ED /* HJUserParam.m in Sources */,
 				933E5FD31CF2E7A700C5F7BE /* UIView+Frame.m in Sources */,
 				9364838A1CF55A62001D0E17 /* HJAccountTool.m in Sources */,
+				9397CB331CFACFDE006A362B /* HJComposeViewController.m in Sources */,
 				933E5FC61CF2D50C00C5F7BE /* HJTabBarController.m in Sources */,
+				9397CB361CFAD4AB006A362B /* HJComposeTextView.m in Sources */,
 				931089721CF6D0A300D665ED /* HJStatusTool.m in Sources */,
 				93A21EBD1CF5D67B002966E3 /* NSData+ImageContentType.m in Sources */,
 				936483691CF557FD001D0E17 /* MBProgressHUD.m in Sources */,
@@ -1244,6 +1293,7 @@
 				931089921CF6D82400D665ED /* HJUserTool.m in Sources */,
 				9310897C1CF6D2AB00D665ED /* HJStatusCacheTool.m in Sources */,
 				93A21E781CF5CF55002966E3 /* MJFoundation.m in Sources */,
+				9397CB391CFAE018006A362B /* HJTitleLabel.m in Sources */,
 				936483811CF5580D001D0E17 /* AFNetworkReachabilityManager.m in Sources */,
 				93A21E5A1CF5CDC4002966E3 /* HJUser.m in Sources */,
 				93A21EC91CF5D67B002966E3 /* UIImageView+HighlightedWebCache.m in Sources */,

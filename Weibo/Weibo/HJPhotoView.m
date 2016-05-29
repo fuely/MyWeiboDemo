@@ -46,6 +46,7 @@
 {
     _photo = photo;
     [self sd_setImageWithURL:photo.thumbnail_pic placeholderImage:[UIImage imageNamed:@"timeline_image_placeholder"]];
+    //判断是否显示gif
     if ([_photo.thumbnail_pic.absoluteString hasSuffix:@".gif"]) { // gif图片
         self.gifView.hidden = NO;
     }else{

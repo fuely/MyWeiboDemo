@@ -76,11 +76,6 @@
 #pragma mark - 请求更多旧的微博数据
 - (void)loadMoreStatuses
 {
-/**
-     越新的微博,id越大,第一个微博的id最大,因为显示在最上面,一般最上面就是最新,
-     所以判断比第一条id大的就是新的微博数据 Max_id
-     若指定此参数，则返回ID小于或等于max_id的微博，默认为0
-*/
     HJStatusFrame *statusF = [self.statusFrameArr lastObject];
     id maxID = nil;
     if (statusF.status.idstr) {
