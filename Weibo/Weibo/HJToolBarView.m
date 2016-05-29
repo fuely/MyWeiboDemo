@@ -80,6 +80,7 @@
     [btn setTitle:title forState:UIControlStateNormal];
     [btn setImage:image forState:UIControlStateNormal];
     [btn setBackgroundImage:[UIImage imageNamed:@"timeline_card_bottom_background_highlighted"] forState:UIControlStateHighlighted];
+    [btn addTarget:self action:@selector(clickBtn:) forControlEvents:UIControlEventTouchUpInside];
     btn.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
     
     [self.btns addObject:btn];
@@ -93,12 +94,11 @@
     if (btn == _unlike) {
         [btn setTitleColor:[UIColor orangeColor] forState:UIControlStateSelected];
         if (btn.selected) {
-            [self setBtnTitleWithCount:_status.attitudes_count originalTitle:@"赞" setBtn:_unlike];
-            btn.selected = NO;
+            [self setBtnTitleWithCount:_status.attitudes_count setBtn:btn];
         }else{
-            [self setBtnTitleWithCount:_status.attitudes_count+1 originalTitle:@"赞" setBtn:_unlike];
-            btn.selected = YES;
+            [self setBtnTitleWithCount:_status.attitudes_count+1 setBtn:btn];
         }
+            btn.selected = !btn.selected;
     }
 }
 
@@ -132,33 +132,28 @@
     _status = status;
     
     // 转发
-    [self setBtnTitleWithCount:status.reposts_count originalTitle:@"转发" setBtn:_retweet];
+    [self setBtnTitleWithCount:status.reposts_count setBtn:_retweet];
     // 评论
-    [self setBtnTitleWithCount:status.comments_count originalTitle:@"评论" setBtn:_comment];
+    [self setBtnTitleWithCount:status.comments_count setBtn:_comment];
     // 赞
-    [self setBtnTitleWithCount:status.attitudes_count originalTitle:@"赞" setBtn:_unlike];
-    
+    [self setBtnTitleWithCount:status.attitudes_count setBtn:_unlike];
+    _unlike.selected = NO;
+
     
 }
 
 #pragma mark - 设置转发,评论,赞的数目
-- (void)setBtnTitleWithCount:(int)count originalTitle:(NSString *)title setBtn:(UIButton *)btn
+- (void)setBtnTitleWithCount:(int)count setBtn:(UIButton *)btn
 {
+    NSString *title = nil;
     if (count) {
-        
         if (count > 10000) {
             CGFloat floatCount = count / 10000.0;
             title = [NSString stringWithFormat:@"%.1f万",floatCount];
-            
             title = [title stringByReplacingOccurrencesOfString:@".0" withString:@""];
-            
-            [btn setTitle:title forState:UIControlStateNormal];
         }else{
-            
-            [btn setTitle:[NSString stringWithFormat:@"%d",count] forState:UIControlStateNormal];
+            title = [NSString stringWithFormat:@"%d",count];
         }
-        
-    }else{
         [btn setTitle:title forState:UIControlStateNormal];
     }
 }

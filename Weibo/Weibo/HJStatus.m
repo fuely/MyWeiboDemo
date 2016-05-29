@@ -71,6 +71,7 @@
 {
     if ([source isEqualToString:@""]) return;
     
+    //截取字符串
     NSRange range = [source rangeOfString:@">"];
     source = [source substringFromIndex:range.location + 1];
     range = [source rangeOfString:@"<"];

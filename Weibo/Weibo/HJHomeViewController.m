@@ -256,7 +256,6 @@
     HJStatusFrame *statusF =  self.statusFrameArr[indexPath.row];
     
     cell.statusF = statusF;
-    
     return cell;
     
 }

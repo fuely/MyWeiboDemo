@@ -21,8 +21,10 @@
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
+        //设置视图的内容模式
         self.contentMode = UIViewContentModeScaleAspectFill;
         self.clipsToBounds = YES;
+        //允许交互
         self.userInteractionEnabled = YES;
     }
     return self;

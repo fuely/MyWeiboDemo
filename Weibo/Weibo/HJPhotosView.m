@@ -36,6 +36,8 @@ const CGFloat photoWH = 70;
     for (int i = 0; i < HJPhotoCount; i++) {
         HJPhotoView *imageV = [[HJPhotoView alloc] init];
         imageV.tag = i;
+        
+        //添加点按手势
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
         
         [imageV addGestureRecognizer:tap];
@@ -43,8 +45,10 @@ const CGFloat photoWH = 70;
     }
 }
 
+#pragma mark - 点击图片时候调用
 - (void)tap:(UITapGestureRecognizer *)tap
 {
+    //创建浏览器对象
     MJPhotoBrowser *browser = [[MJPhotoBrowser alloc] init];
     // 弹出相册时显示的第一张图片是点击的图片
     browser.currentPhotoIndex = tap.view.tag;
@@ -53,7 +57,12 @@ const CGFloat photoWH = 70;
     for (HJPhoto *photo in _pic_urls) {
         
         MJPhoto *mjPhoto = [[MJPhoto alloc] init];
-        mjPhoto.url = photo.thumbnail_pic;
+        
+        //转高质量图片
+        NSString *urlStr = photo.thumbnail_pic.absoluteString;
+        urlStr = [urlStr stringByReplacingOccurrencesOfString:@"thumbnail" withString:@"bmiddle"];
+        
+        mjPhoto.url = [NSURL URLWithString:urlStr];
         mjPhoto.srcImageView = (UIImageView *)tap.view;
         
         [photos addObject:mjPhoto];
@@ -84,6 +93,7 @@ const CGFloat photoWH = 70;
     }
 }
 
+#pragma mark - 计算配图位置和尺寸
 - (void)layoutSubviews
 {
     [super layoutSubviews];

@@ -114,6 +114,7 @@
         _vipView.hidden = YES;
     }
     
+    //实时修改时间与来源frame
     // 时间frame
     CGFloat timeX = statusF.nameViewF.origin.x;
     CGFloat timeY = CGRectGetMaxY(statusF.nameViewF) ;
