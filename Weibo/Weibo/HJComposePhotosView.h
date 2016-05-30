@@ -10,6 +10,8 @@
 
 @interface HJComposePhotosView : UIView
 
+@property (nonatomic, strong) NSMutableArray *images;
+
 @property (nonatomic, strong) UIImage *image;
 
 @end

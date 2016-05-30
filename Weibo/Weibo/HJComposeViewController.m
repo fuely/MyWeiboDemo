@@ -15,6 +15,9 @@
 #import "HJAccountTool.h"
 #import "HJUser.h"
 #import "HJUserTool.h"
+#import "HJComposeTool.h"
+
+#import "MBProgressHUD+MJ.h"
 
 @interface HJComposeViewController ()<UITextViewDelegate,HJComposeToolBarDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 
@@ -202,12 +205,42 @@
 - (void)compose
 {
     
-//    if (_photosView.images.count) { // 有图片
-//        [self composeImage];
-//    }else{ // 没有图片
-//        [self composeWithoutImage];
-//    }
+    if (_photosView.images.count) { // 有图片
+        [self sentPicture];
+    }else{ // 没有图片
+        [self sentText];
+    }
 }
+
+//发送图片
+- (void)sentPicture
+{
+    [MBProgressHUD showMessage:@"正在发送。。。"];
+    UIImage *image = [_photosView.images firstObject];
+    NSString *status = _composeTextV.text.length?_composeTextV.text:@"分享图片";
+    
+    [HJComposeTool composeWithImage:image status:status success:^{
+        [MBProgressHUD hideHUD];
+        [MBProgressHUD showSuccess:@"发送成功"];
+        [self dismissViewControllerAnimated:YES completion:nil];
+    } failure:^(NSError *error) {
+        [MBProgressHUD hideHUD];
+        NSLog(@"%@",error.description);
+    }];
+    
+}
+
+//发送文字
+- (void)sentText
+{
+    [HJComposeTool composeWithSatausText:_composeTextV.text success:^{
+        [MBProgressHUD showSuccess:@"发送成功"];
+        [self dismissViewControllerAnimated:YES completion:nil];
+    } failure:^(NSError *error) {
+        
+    }];
+}
+
 
 - (void)cancle
 {

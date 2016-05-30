@@ -122,6 +122,8 @@
 		93A21EFC1CF5DC70002966E3 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A21EF41CF5DC70002966E3 /* UIView+MJExtension.m */; };
 		93B7B79A1CFC0B3A008A139E /* HJComposeToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B7B7991CFC0B3A008A139E /* HJComposeToolBar.m */; };
 		93B7B79D1CFC1E99008A139E /* HJComposePhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B7B79C1CFC1E99008A139E /* HJComposePhotosView.m */; };
+		93B7B7A11CFC24A3008A139E /* HJComposeParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B7B7A01CFC24A3008A139E /* HJComposeParam.m */; };
+		93B7B7A41CFC24EF008A139E /* HJComposeTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B7B7A31CFC24EF008A139E /* HJComposeTool.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -374,6 +376,10 @@
 		93B7B7991CFC0B3A008A139E /* HJComposeToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJComposeToolBar.m; sourceTree = "<group>"; };
 		93B7B79B1CFC1E99008A139E /* HJComposePhotosView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJComposePhotosView.h; sourceTree = "<group>"; };
 		93B7B79C1CFC1E99008A139E /* HJComposePhotosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJComposePhotosView.m; sourceTree = "<group>"; };
+		93B7B79F1CFC24A3008A139E /* HJComposeParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJComposeParam.h; sourceTree = "<group>"; };
+		93B7B7A01CFC24A3008A139E /* HJComposeParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJComposeParam.m; sourceTree = "<group>"; };
+		93B7B7A21CFC24EF008A139E /* HJComposeTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJComposeTool.h; sourceTree = "<group>"; };
+		93B7B7A31CFC24EF008A139E /* HJComposeTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJComposeTool.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -608,6 +614,7 @@
 		933E5FF31CF33B4E00C5F7BE /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				93B7B79E1CFC2456008A139E /* Compose */,
 				93A21EFE1CF5DEDE002966E3 /* User */,
 				93A21EFD1CF5DED3002966E3 /* Status */,
 				936483871CF55A0A001D0E17 /* Http */,
@@ -1081,6 +1088,17 @@
 			name = User;
 			sourceTree = "<group>";
 		};
+		93B7B79E1CFC2456008A139E /* Compose */ = {
+			isa = PBXGroup;
+			children = (
+				93B7B79F1CFC24A3008A139E /* HJComposeParam.h */,
+				93B7B7A01CFC24A3008A139E /* HJComposeParam.m */,
+				93B7B7A21CFC24EF008A139E /* HJComposeTool.h */,
+				93B7B7A31CFC24EF008A139E /* HJComposeTool.m */,
+			);
+			name = Compose;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1257,6 +1275,7 @@
 				93B7B79D1CFC1E99008A139E /* HJComposePhotosView.m in Sources */,
 				9310898D1CF6D4BE00D665ED /* FMResultSet.m in Sources */,
 				93A21E791CF5CF55002966E3 /* MJIvar.m in Sources */,
+				93B7B7A11CFC24A3008A139E /* HJComposeParam.m in Sources */,
 				93A21E7A1CF5CF55002966E3 /* MJMember.m in Sources */,
 				93A21EC81CF5D67B002966E3 /* UIImage+WebP.m in Sources */,
 				93706A5D1CF418A3007C7341 /* UIImage+Resizable.m in Sources */,
@@ -1305,6 +1324,7 @@
 				936483931CF55DA3001D0E17 /* HJUploadParam.m in Sources */,
 				93A21E7F1CF5CF55002966E3 /* NSObject+MJKeyValue.m in Sources */,
 				93A21E871CF5D2BE002966E3 /* HJStatusCell.m in Sources */,
+				93B7B7A41CFC24EF008A139E /* HJComposeTool.m in Sources */,
 				936483671CF557FD001D0E17 /* MBProgressHUD+MJ.m in Sources */,
 				93A21E991CF5D5F2002966E3 /* HJPhotoView.m in Sources */,
 				93706A6B1CF43DCF007C7341 /* HJNewFeatureController.m in Sources */,
