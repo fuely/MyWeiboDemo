@@ -31,11 +31,6 @@
     
 }
 
-- (void)dealloc
-{
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
-
 - (UILabel *)placeTextLabel
 {
     if (_placeTextLabel == nil) {
@@ -51,7 +46,13 @@
     _placeHolder = [placeHolder copy];
     self.placeTextLabel.text = placeHolder;
     self.placeTextLabel.textColor = [UIColor lightGrayColor];
+    //label的尺寸跟文字一样
     [self.placeTextLabel sizeToFit];
+}
+
+-(void)layoutSubviews
+{
+    [super layoutSubviews];
     self.placeTextLabel.x = 5;
     self.placeTextLabel.y = 8;
 }

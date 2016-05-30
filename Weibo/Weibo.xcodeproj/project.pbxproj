@@ -66,7 +66,6 @@
 		9395AD5C1CF822AD0077E6C0 /* silence.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9395AD5B1CF822AD0077E6C0 /* silence.mp3 */; };
 		9397CB331CFACFDE006A362B /* HJComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9397CB321CFACFDE006A362B /* HJComposeViewController.m */; };
 		9397CB361CFAD4AB006A362B /* HJComposeTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9397CB351CFAD4AB006A362B /* HJComposeTextView.m */; };
-		9397CB391CFAE018006A362B /* HJTitleLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9397CB381CFAE018006A362B /* HJTitleLabel.m */; };
 		93A21E571CF5CC87002966E3 /* HJStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A21E561CF5CC87002966E3 /* HJStatus.m */; };
 		93A21E5A1CF5CDC4002966E3 /* HJUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A21E591CF5CDC4002966E3 /* HJUser.m */; };
 		93A21E5D1CF5CED7002966E3 /* HJPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A21E5C1CF5CED7002966E3 /* HJPhoto.m */; };
@@ -121,6 +120,8 @@
 		93A21EFA1CF5DC70002966E3 /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A21EF01CF5DC70002966E3 /* UIScrollView+MJExtension.m */; };
 		93A21EFB1CF5DC70002966E3 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A21EF21CF5DC70002966E3 /* UIScrollView+MJRefresh.m */; };
 		93A21EFC1CF5DC70002966E3 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A21EF41CF5DC70002966E3 /* UIView+MJExtension.m */; };
+		93B7B79A1CFC0B3A008A139E /* HJComposeToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B7B7991CFC0B3A008A139E /* HJComposeToolBar.m */; };
+		93B7B79D1CFC1E99008A139E /* HJComposePhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B7B79C1CFC1E99008A139E /* HJComposePhotosView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -260,8 +261,6 @@
 		9397CB321CFACFDE006A362B /* HJComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJComposeViewController.m; sourceTree = "<group>"; };
 		9397CB341CFAD4AB006A362B /* HJComposeTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJComposeTextView.h; sourceTree = "<group>"; };
 		9397CB351CFAD4AB006A362B /* HJComposeTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJComposeTextView.m; sourceTree = "<group>"; };
-		9397CB371CFAE018006A362B /* HJTitleLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJTitleLabel.h; sourceTree = "<group>"; };
-		9397CB381CFAE018006A362B /* HJTitleLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJTitleLabel.m; sourceTree = "<group>"; };
 		93A21E551CF5CC87002966E3 /* HJStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJStatus.h; sourceTree = "<group>"; };
 		93A21E561CF5CC87002966E3 /* HJStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJStatus.m; sourceTree = "<group>"; };
 		93A21E581CF5CDC4002966E3 /* HJUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJUser.h; sourceTree = "<group>"; };
@@ -371,6 +370,10 @@
 		93A21EF21CF5DC70002966E3 /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
 		93A21EF31CF5DC70002966E3 /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
 		93A21EF41CF5DC70002966E3 /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
+		93B7B7981CFC0B3A008A139E /* HJComposeToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJComposeToolBar.h; sourceTree = "<group>"; };
+		93B7B7991CFC0B3A008A139E /* HJComposeToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJComposeToolBar.m; sourceTree = "<group>"; };
+		93B7B79B1CFC1E99008A139E /* HJComposePhotosView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJComposePhotosView.h; sourceTree = "<group>"; };
+		93B7B79C1CFC1E99008A139E /* HJComposePhotosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJComposePhotosView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -898,8 +901,10 @@
 			children = (
 				9397CB341CFAD4AB006A362B /* HJComposeTextView.h */,
 				9397CB351CFAD4AB006A362B /* HJComposeTextView.m */,
-				9397CB371CFAE018006A362B /* HJTitleLabel.h */,
-				9397CB381CFAE018006A362B /* HJTitleLabel.m */,
+				93B7B7981CFC0B3A008A139E /* HJComposeToolBar.h */,
+				93B7B7991CFC0B3A008A139E /* HJComposeToolBar.m */,
+				93B7B79B1CFC1E99008A139E /* HJComposePhotosView.h */,
+				93B7B79C1CFC1E99008A139E /* HJComposePhotosView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1249,6 +1254,7 @@
 				933E60111CF343E600C5F7BE /* HJDiscoverViewController.m in Sources */,
 				931089891CF6D4BE00D665ED /* FMDatabase.m in Sources */,
 				936483861CF5580D001D0E17 /* AFURLSessionManager.m in Sources */,
+				93B7B79D1CFC1E99008A139E /* HJComposePhotosView.m in Sources */,
 				9310898D1CF6D4BE00D665ED /* FMResultSet.m in Sources */,
 				93A21E791CF5CF55002966E3 /* MJIvar.m in Sources */,
 				93A21E7A1CF5CF55002966E3 /* MJMember.m in Sources */,
@@ -1293,7 +1299,6 @@
 				931089921CF6D82400D665ED /* HJUserTool.m in Sources */,
 				9310897C1CF6D2AB00D665ED /* HJStatusCacheTool.m in Sources */,
 				93A21E781CF5CF55002966E3 /* MJFoundation.m in Sources */,
-				9397CB391CFAE018006A362B /* HJTitleLabel.m in Sources */,
 				936483811CF5580D001D0E17 /* AFNetworkReachabilityManager.m in Sources */,
 				93A21E5A1CF5CDC4002966E3 /* HJUser.m in Sources */,
 				93A21EC91CF5D67B002966E3 /* UIImageView+HighlightedWebCache.m in Sources */,
@@ -1305,6 +1310,7 @@
 				93706A6B1CF43DCF007C7341 /* HJNewFeatureController.m in Sources */,
 				93A21E5D1CF5CED7002966E3 /* HJPhoto.m in Sources */,
 				931089781CF6D13A00D665ED /* HJStatusResult.m in Sources */,
+				93B7B79A1CFC0B3A008A139E /* HJComposeToolBar.m in Sources */,
 				933E60141CF3441F00C5F7BE /* HJHomeViewController.m in Sources */,
 				936483901CF55D7A001D0E17 /* HJHttpTool.m in Sources */,
 				933E5FEF1CF3374D00C5F7BE /* HJOauthViewController.m in Sources */,

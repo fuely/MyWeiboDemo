@@ -23,6 +23,7 @@
     if (self = [super initWithFrame:frame]) {
         //设置视图的内容模式
         self.contentMode = UIViewContentModeScaleAspectFill;
+        //超出配图的部分裁剪掉
         self.clipsToBounds = YES;
         //允许交互
         self.userInteractionEnabled = YES;

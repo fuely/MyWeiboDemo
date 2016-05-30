@@ -8,17 +8,23 @@
 
 #import "HJComposeViewController.h"
 #import "HJComposeTextView.h"
+#import "HJComposeToolBar.h"
+#import "HJComposePhotosView.h"
 
 #import "HJAccount.h"
 #import "HJAccountTool.h"
 #import "HJUser.h"
 #import "HJUserTool.h"
 
-@interface HJComposeViewController ()<UITextViewDelegate>
+@interface HJComposeViewController ()<UITextViewDelegate,HJComposeToolBarDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 
 @property (nonatomic, weak) UIButton *composeBtn;
 
 @property (nonatomic, weak) HJComposeTextView *composeTextV;
+
+@property (nonatomic, weak) HJComposeToolBar *toolBar;
+
+@property (nonatomic, weak) HJComposePhotosView *photosView;
 
 @end
 
@@ -34,18 +40,99 @@
     // 添加textView
     [self setUpTextView];
     
-    // 监听文本内容改变
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textChange) name:UITextViewTextDidChangeNotification object:_composeTextV];
+    //添加工具条
+    [self setUpToolBar];
+    
+    // 监听键盘改变
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(KeyboardFrameChange:) name:UIKeyboardWillChangeFrameNotification object:nil];
+    
+    //添加相册视图
+    [self setUpPhotosView];
 }
 
-#pragma  mark - 监听到调用
-- (void)textChange
+- (void)setUpPhotosView
 {
-    _composeTextV.hidePlaceHolder = _composeTextV.text.length != 0;
-    _composeBtn.enabled =  _composeTextV.text.length != 0;
+    HJComposePhotosView *photosView = [[HJComposePhotosView alloc] initWithFrame:_composeTextV.bounds];
+    photosView.y = 70;
+    _photosView = photosView;
+    [_composeTextV addSubview:photosView];
 }
 
-#pragma  mark - 设置正文
+#pragma mark - 键盘Frame改变时候diaoy
+
+- (void)KeyboardFrameChange:(NSNotification *)note
+{
+    CGFloat durtion = [note.userInfo[UIKeyboardAnimationDurationUserInfoKey] floatValue];
+    
+    //获取键盘的Frame
+    CGRect keyboardFrame = [note.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    
+    if (keyboardFrame.origin.y == self.view.height) {//没有弹出键盘
+        [UIView animateWithDuration:durtion animations:^{
+            _toolBar.transform = CGAffineTransformIdentity;
+        }];
+        
+    }else{//弹出键盘
+        //工具往上移动258
+        [UIView animateWithDuration:durtion animations:^{
+            _toolBar.transform = CGAffineTransformMakeTranslation(0, -keyboardFrame.size.height);
+        }];
+    }
+}
+
+
+#pragma mark - 设置工具条
+- (void)setUpToolBar
+{
+    CGFloat h =35;
+    CGFloat y = self.view.height - h;
+    HJComposeToolBar *toolBar = [[HJComposeToolBar alloc] initWithFrame:CGRectMake(0, y, self.view.width, h)];
+    _toolBar = toolBar;
+    _toolBar.delegate = self;
+    [self.view addSubview:toolBar];
+   
+}
+
+#pragma  mark - HJComposeToolBarDelegate
+
+- (void)composeToolBar:(HJComposeToolBar *)toolBar didClickBtn:(HJComposeToolBarButtonType)type
+{
+    switch (type) {
+        case HJComposeToolBarButtonTypeCamera:
+        {
+            //进入相册
+            UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+            picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+            picker.delegate = self;
+            [self presentViewController:picker animated:YES completion:nil];
+            
+        }
+            break;
+        case HJComposeToolBarButtonTypeMention:
+            break;
+        case HJComposeToolBarButtonTypeTrend:
+            break;
+        case HJComposeToolBarButtonTypeEmoticon:
+            break;
+        case HJComposeToolBarButtonTypeKeyboard:
+            break;
+        default:
+            break;
+    }
+}
+
+#pragma mark - 选择图片完成的时候调用
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
+{
+    UIImage *image = info[UIImagePickerControllerOriginalImage];
+    
+    _photosView.image = image;
+    
+    _composeBtn.enabled = YES;
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - 设置正文
 - (void)setUpTextView
 {
     HJComposeTextView *composeTextV = [[HJComposeTextView alloc] initWithFrame:self.view.bounds];
@@ -56,8 +143,12 @@
     
     [self.view addSubview:composeTextV];
     
+    // 监听文本内容改变
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textChange) name:UITextViewTextDidChangeNotification object:_composeTextV];
+    
 }
 
+#pragma mark - UITextViewDelegate 拖拽时候调用
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
     [self.view endEditing:YES];
@@ -75,9 +166,24 @@
     [self.view endEditing:YES];
 }
 
+#pragma mark - 监听到调用
+- (void)textChange
+{
+    _composeTextV.hidePlaceHolder = _composeTextV.text.length != 0;
+    _composeBtn.enabled =  _composeTextV.text.length != 0;
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+
 #pragma mark - 设置导航条
 - (void)setUpNaVBar
 {
+    self.title = @"发微博";
+    
     UIBarButtonItem *cancleItem = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(cancle)];
     self.navigationItem.leftBarButtonItem = cancleItem;
     
@@ -91,36 +197,6 @@
     composeBtn.enabled = NO;
     self.navigationItem.rightBarButtonItem = composeItem;
     _composeBtn = composeBtn;
-    
-    [self setTitleView];
-}
-
-- (void)setTitleView
-{
-    // 设置titleView
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.view.width/2, 0, 0, 0)];
-    [titleLabel sizeToFit];
-    self.navigationItem.titleView = titleLabel;
-    // 获取标题
-    NSString *titleName = [HJAccountTool account].name?:@"发微博";
-    
-    if (titleName == nil) { // 没有标题
-        //获取微博昵称
-        [HJUserTool userInfoDidsuccess:^(HJUser *user) {
-            //设置导航条的标题
-            titleLabel.text = user.name;
-            //获取当前账号
-            HJAccount *account = [HJAccountTool account];
-            account.name = user.name;
-            //保存用户名称
-            [HJAccountTool saveAccount:account];
-            
-        } failure:^(NSError *error) {
-            
-        }];
-    }else{ // 有标题
-        titleLabel.text = titleName;
-    }
 }
 
 - (void)compose
