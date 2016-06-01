@@ -8,6 +8,8 @@
 
 #import "HJHomeViewController.h"
 #import "HJTitleButton.h"
+#import "HJPopView.h"
+#import "HJPopViewController.h"
 
 #import "HJStatus.h"
 #import "HJUser.h"
@@ -22,13 +24,15 @@
 #import "MJRefresh.h"
 #import "UIImageView+WebCache.h"
 
-@interface HJHomeViewController ()
+@interface HJHomeViewController () <HJPopViewDelegate>
 
 /**
  * HJStatusFrame
  */
 @property (nonatomic, strong) NSMutableArray *statusFrameArr;
 @property (nonatomic, weak) HJTitleButton *titleButton;
+@property (nonatomic, strong) HJPopView *popView;
+@property (nonatomic, strong) HJPopViewController *popVc;
 
 @end
 
@@ -215,15 +219,41 @@
 {
     button.selected = !button.selected;
 
-/*    //  显示菜单
+    //  显示菜单
     CGFloat x = (self.view.width - 200) * 0.5;
     CGFloat y = CGRectGetMaxY(self.navigationController.navigationBar.frame) - 9;
     
     self.popView.contentView = self.popVc.view;
     
     [self.popView showInRect:CGRectMake(x, y, 200, 200)];
-*/
     
+}
+
+// popView代理
+- (void)popViewDidDismiss:(HJPopView *)popView
+{
+    _titleButton.selected = NO;
+    _popView = nil;
+}
+
+- (HJPopViewController *)popVc
+{
+    if (_popVc == nil) {
+        HJPopViewController *pop = [[HJPopViewController alloc] init];
+        _popVc = pop;
+        
+    }
+    return _popVc;
+}
+- (HJPopView *)popView
+{
+    if (_popView == nil) {
+        
+        HJPopView *v = [HJPopView popView];
+        v.delegate = self;
+        _popView = v;
+    }
+    return _popView;
 }
 
 

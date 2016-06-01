@@ -55,6 +55,9 @@
 		933E60141CF3441F00C5F7BE /* HJHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 933E60131CF3441F00C5F7BE /* HJHomeViewController.m */; };
 		933E60171CF3445600C5F7BE /* HJMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 933E60161CF3445600C5F7BE /* HJMessageViewController.m */; };
 		933E601A1CF3448100C5F7BE /* HJProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 933E60191CF3448100C5F7BE /* HJProfileViewController.m */; };
+		9349C0031CFF33E500358CE1 /* HJMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9349C0021CFF33E500358CE1 /* HJMessageCell.m */; };
+		9349C0061CFF3D2400358CE1 /* HJPopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9349C0051CFF3D2400358CE1 /* HJPopViewController.m */; };
+		9349C0091CFF3F9900358CE1 /* HJPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9349C0081CFF3F9900358CE1 /* HJPopView.m */; };
 		936483671CF557FD001D0E17 /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 936483631CF557FD001D0E17 /* MBProgressHUD+MJ.m */; };
 		936483681CF557FD001D0E17 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 936483641CF557FD001D0E17 /* MBProgressHUD.bundle */; };
 		936483691CF557FD001D0E17 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 936483661CF557FD001D0E17 /* MBProgressHUD.m */; };
@@ -256,6 +259,12 @@
 		933E60161CF3445600C5F7BE /* HJMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJMessageViewController.m; sourceTree = "<group>"; };
 		933E60181CF3448100C5F7BE /* HJProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJProfileViewController.h; sourceTree = "<group>"; };
 		933E60191CF3448100C5F7BE /* HJProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJProfileViewController.m; sourceTree = "<group>"; };
+		9349C0011CFF33E500358CE1 /* HJMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJMessageCell.h; sourceTree = "<group>"; };
+		9349C0021CFF33E500358CE1 /* HJMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJMessageCell.m; sourceTree = "<group>"; };
+		9349C0041CFF3D2400358CE1 /* HJPopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJPopViewController.h; sourceTree = "<group>"; };
+		9349C0051CFF3D2400358CE1 /* HJPopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJPopViewController.m; sourceTree = "<group>"; };
+		9349C0071CFF3F9900358CE1 /* HJPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJPopView.h; sourceTree = "<group>"; };
+		9349C0081CFF3F9900358CE1 /* HJPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJPopView.m; sourceTree = "<group>"; };
 		936483621CF557FD001D0E17 /* MBProgressHUD+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+MJ.h"; sourceTree = "<group>"; };
 		936483631CF557FD001D0E17 /* MBProgressHUD+MJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+MJ.m"; sourceTree = "<group>"; };
 		936483641CF557FD001D0E17 /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
@@ -824,6 +833,8 @@
 				93A21E841CF5D281002966E3 /* Cell */,
 				93706A611CF42D29007C7341 /* HJTitleButton.h */,
 				93706A621CF42D29007C7341 /* HJTitleButton.m */,
+				9349C0071CFF3F9900358CE1 /* HJPopView.h */,
+				9349C0081CFF3F9900358CE1 /* HJPopView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -833,6 +844,8 @@
 			children = (
 				933E60121CF3441F00C5F7BE /* HJHomeViewController.h */,
 				933E60131CF3441F00C5F7BE /* HJHomeViewController.m */,
+				9349C0041CFF3D2400358CE1 /* HJPopViewController.h */,
+				9349C0051CFF3D2400358CE1 /* HJPopViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -857,6 +870,8 @@
 		933E5FFF1CF341E500C5F7BE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9349C0011CFF33E500358CE1 /* HJMessageCell.h */,
+				9349C0021CFF33E500358CE1 /* HJMessageCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1421,6 +1436,7 @@
 				931089751CF6D10E00D665ED /* HJStatusParam.m in Sources */,
 				93706A601CF419C0007C7341 /* HJSearchBar.m in Sources */,
 				933E5FF21CF338D800C5F7BE /* HJWeibocfg.m in Sources */,
+				9349C0091CFF3F9900358CE1 /* HJPopView.m in Sources */,
 				930F65501CFD4E1B004F5A4B /* HJSettingItem.m in Sources */,
 				93A21EF91CF5DC70002966E3 /* MJRefreshHeaderView.m in Sources */,
 				93A21E831CF5D102002966E3 /* NSDate+MJ.m in Sources */,
@@ -1464,6 +1480,7 @@
 				93706A6E1CF43DF7007C7341 /* HJNewFeatureCell.m in Sources */,
 				93A21E961CF5D5D4002966E3 /* HJPhotosView.m in Sources */,
 				93A21E7E1CF5CF55002966E3 /* NSObject+MJCoding.m in Sources */,
+				9349C0031CFF33E500358CE1 /* HJMessageCell.m in Sources */,
 				933E5F8B1CF2D2B700C5F7BE /* main.m in Sources */,
 				93A21EE11CF5D77D002966E3 /* MJPhotoToolbar.m in Sources */,
 				933E60171CF3445600C5F7BE /* HJMessageViewController.m in Sources */,
@@ -1501,6 +1518,7 @@
 				933E5FC91CF2D5F500C5F7BE /* HJTabBar.m in Sources */,
 				93A21EC11CF5D67B002966E3 /* SDWebImageDownloader.m in Sources */,
 				93A21EC71CF5D67B002966E3 /* UIImage+MultiFormat.m in Sources */,
+				9349C0061CFF3D2400358CE1 /* HJPopViewController.m in Sources */,
 				930F657B1CFEC316004F5A4B /* HJFontSizeTool.m in Sources */,
 				936483841CF5580D001D0E17 /* AFURLRequestSerialization.m in Sources */,
 				93A21EC01CF5D67B002966E3 /* SDWebImageDecoder.m in Sources */,

@@ -89,9 +89,8 @@
     // 获取模型
     HJGroupItem *groupItem = self.groups[indexPath.section];
     HJSettingItem *item = groupItem.items[indexPath.row];
-    
     if (item.option) {
-        item.option(item);
+        item.option((HJCheakItem *)item);
         return;
     }
     
