@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		930F654D1CFD4DFA004F5A4B /* HJGroupItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 930F654C1CFD4DFA004F5A4B /* HJGroupItem.m */; };
+		930F65501CFD4E1B004F5A4B /* HJSettingItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 930F654F1CFD4E1B004F5A4B /* HJSettingItem.m */; };
+		930F65531CFE95F4004F5A4B /* HJBaseSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 930F65521CFE95F4004F5A4B /* HJBaseSettingViewController.m */; };
+		930F65561CFE99F7004F5A4B /* HJSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 930F65551CFE99F7004F5A4B /* HJSettingCell.m */; };
+		930F65591CFE9D22004F5A4B /* HJArrowItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 930F65581CFE9D22004F5A4B /* HJArrowItem.m */; };
+		930F655C1CFE9DA8004F5A4B /* HJBadgeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 930F655B1CFE9DA8004F5A4B /* HJBadgeItem.m */; };
+		930F655F1CFE9DF9004F5A4B /* HJSwitchItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 930F655E1CFE9DF9004F5A4B /* HJSwitchItem.m */; };
+		930F65621CFE9E69004F5A4B /* HJCheakItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 930F65611CFE9E69004F5A4B /* HJCheakItem.m */; };
+		930F65671CFEAEBD004F5A4B /* HJProfileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 930F65661CFEAEBD004F5A4B /* HJProfileCell.m */; };
+		930F656E1CFEB2D8004F5A4B /* HJSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 930F656D1CFEB2D8004F5A4B /* HJSettingViewController.m */; };
+		930F65711CFEB5DB004F5A4B /* HJLabelItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 930F65701CFEB5DB004F5A4B /* HJLabelItem.m */; };
+		930F65741CFEBB8C004F5A4B /* HJCommonSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 930F65731CFEBB8C004F5A4B /* HJCommonSettingViewController.m */; };
+		930F65771CFEBE5B004F5A4B /* HJFontSizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 930F65761CFEBE5B004F5A4B /* HJFontSizeViewController.m */; };
+		930F657B1CFEC316004F5A4B /* HJFontSizeTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 930F657A1CFEC316004F5A4B /* HJFontSizeTool.m */; };
 		931089721CF6D0A300D665ED /* HJStatusTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 931089711CF6D0A300D665ED /* HJStatusTool.m */; };
 		931089751CF6D10E00D665ED /* HJStatusParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 931089741CF6D10E00D665ED /* HJStatusParam.m */; };
 		931089781CF6D13A00D665ED /* HJStatusResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 931089771CF6D13A00D665ED /* HJStatusResult.m */; };
@@ -144,6 +158,35 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		930F654B1CFD4DFA004F5A4B /* HJGroupItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJGroupItem.h; sourceTree = "<group>"; };
+		930F654C1CFD4DFA004F5A4B /* HJGroupItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJGroupItem.m; sourceTree = "<group>"; };
+		930F654E1CFD4E1B004F5A4B /* HJSettingItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJSettingItem.h; sourceTree = "<group>"; };
+		930F654F1CFD4E1B004F5A4B /* HJSettingItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJSettingItem.m; sourceTree = "<group>"; };
+		930F65511CFE95F4004F5A4B /* HJBaseSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJBaseSettingViewController.h; sourceTree = "<group>"; };
+		930F65521CFE95F4004F5A4B /* HJBaseSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJBaseSettingViewController.m; sourceTree = "<group>"; };
+		930F65541CFE99F7004F5A4B /* HJSettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJSettingCell.h; sourceTree = "<group>"; };
+		930F65551CFE99F7004F5A4B /* HJSettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJSettingCell.m; sourceTree = "<group>"; };
+		930F65571CFE9D22004F5A4B /* HJArrowItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJArrowItem.h; sourceTree = "<group>"; };
+		930F65581CFE9D22004F5A4B /* HJArrowItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJArrowItem.m; sourceTree = "<group>"; };
+		930F655A1CFE9DA8004F5A4B /* HJBadgeItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJBadgeItem.h; sourceTree = "<group>"; };
+		930F655B1CFE9DA8004F5A4B /* HJBadgeItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJBadgeItem.m; sourceTree = "<group>"; };
+		930F655D1CFE9DF9004F5A4B /* HJSwitchItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJSwitchItem.h; sourceTree = "<group>"; };
+		930F655E1CFE9DF9004F5A4B /* HJSwitchItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJSwitchItem.m; sourceTree = "<group>"; };
+		930F65601CFE9E69004F5A4B /* HJCheakItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJCheakItem.h; sourceTree = "<group>"; };
+		930F65611CFE9E69004F5A4B /* HJCheakItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJCheakItem.m; sourceTree = "<group>"; };
+		930F65641CFE9FA7004F5A4B /* HJBaseSetting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HJBaseSetting.h; sourceTree = "<group>"; };
+		930F65651CFEAEBD004F5A4B /* HJProfileCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJProfileCell.h; sourceTree = "<group>"; };
+		930F65661CFEAEBD004F5A4B /* HJProfileCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJProfileCell.m; sourceTree = "<group>"; };
+		930F656C1CFEB2D8004F5A4B /* HJSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJSettingViewController.h; sourceTree = "<group>"; };
+		930F656D1CFEB2D8004F5A4B /* HJSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJSettingViewController.m; sourceTree = "<group>"; };
+		930F656F1CFEB5DB004F5A4B /* HJLabelItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJLabelItem.h; sourceTree = "<group>"; };
+		930F65701CFEB5DB004F5A4B /* HJLabelItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJLabelItem.m; sourceTree = "<group>"; };
+		930F65721CFEBB8C004F5A4B /* HJCommonSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJCommonSettingViewController.h; sourceTree = "<group>"; };
+		930F65731CFEBB8C004F5A4B /* HJCommonSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJCommonSettingViewController.m; sourceTree = "<group>"; };
+		930F65751CFEBE5B004F5A4B /* HJFontSizeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJFontSizeViewController.h; sourceTree = "<group>"; };
+		930F65761CFEBE5B004F5A4B /* HJFontSizeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJFontSizeViewController.m; sourceTree = "<group>"; };
+		930F65791CFEC316004F5A4B /* HJFontSizeTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJFontSizeTool.h; sourceTree = "<group>"; };
+		930F657A1CFEC316004F5A4B /* HJFontSizeTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJFontSizeTool.m; sourceTree = "<group>"; };
 		931089701CF6D0A300D665ED /* HJStatusTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJStatusTool.h; sourceTree = "<group>"; };
 		931089711CF6D0A300D665ED /* HJStatusTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJStatusTool.m; sourceTree = "<group>"; };
 		931089731CF6D10E00D665ED /* HJStatusParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJStatusParam.h; sourceTree = "<group>"; };
@@ -417,6 +460,111 @@
 			name = ViewModel;
 			sourceTree = "<group>";
 		};
+		930F65471CFD4BEE004F5A4B /* BaseSetting */ = {
+			isa = PBXGroup;
+			children = (
+				930F65681CFEB276004F5A4B /* Setting */,
+				930F65631CFE9F4D004F5A4B /* Common */,
+				930F654A1CFD4C10004F5A4B /* Controller */,
+				930F65491CFD4C09004F5A4B /* View */,
+				930F65481CFD4C00004F5A4B /* Model */,
+			);
+			name = BaseSetting;
+			sourceTree = "<group>";
+		};
+		930F65481CFD4C00004F5A4B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				930F654B1CFD4DFA004F5A4B /* HJGroupItem.h */,
+				930F654C1CFD4DFA004F5A4B /* HJGroupItem.m */,
+				930F654E1CFD4E1B004F5A4B /* HJSettingItem.h */,
+				930F654F1CFD4E1B004F5A4B /* HJSettingItem.m */,
+				930F65571CFE9D22004F5A4B /* HJArrowItem.h */,
+				930F65581CFE9D22004F5A4B /* HJArrowItem.m */,
+				930F655A1CFE9DA8004F5A4B /* HJBadgeItem.h */,
+				930F655B1CFE9DA8004F5A4B /* HJBadgeItem.m */,
+				930F655D1CFE9DF9004F5A4B /* HJSwitchItem.h */,
+				930F655E1CFE9DF9004F5A4B /* HJSwitchItem.m */,
+				930F65601CFE9E69004F5A4B /* HJCheakItem.h */,
+				930F65611CFE9E69004F5A4B /* HJCheakItem.m */,
+				930F656F1CFEB5DB004F5A4B /* HJLabelItem.h */,
+				930F65701CFEB5DB004F5A4B /* HJLabelItem.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		930F65491CFD4C09004F5A4B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				930F65541CFE99F7004F5A4B /* HJSettingCell.h */,
+				930F65551CFE99F7004F5A4B /* HJSettingCell.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		930F654A1CFD4C10004F5A4B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				930F65511CFE95F4004F5A4B /* HJBaseSettingViewController.h */,
+				930F65521CFE95F4004F5A4B /* HJBaseSettingViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		930F65631CFE9F4D004F5A4B /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				930F65641CFE9FA7004F5A4B /* HJBaseSetting.h */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		930F65681CFEB276004F5A4B /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				930F656B1CFEB297004F5A4B /* Controller */,
+				930F656A1CFEB291004F5A4B /* View */,
+				930F65691CFEB284004F5A4B /* Model */,
+			);
+			name = Setting;
+			sourceTree = "<group>";
+		};
+		930F65691CFEB284004F5A4B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		930F656A1CFEB291004F5A4B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		930F656B1CFEB297004F5A4B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				930F656C1CFEB2D8004F5A4B /* HJSettingViewController.h */,
+				930F656D1CFEB2D8004F5A4B /* HJSettingViewController.m */,
+				930F65721CFEBB8C004F5A4B /* HJCommonSettingViewController.h */,
+				930F65731CFEBB8C004F5A4B /* HJCommonSettingViewController.m */,
+				930F65751CFEBE5B004F5A4B /* HJFontSizeViewController.h */,
+				930F65761CFEBE5B004F5A4B /* HJFontSizeViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		930F65781CFEC2FC004F5A4B /* FontSize */ = {
+			isa = PBXGroup;
+			children = (
+				930F65791CFEC316004F5A4B /* HJFontSizeTool.h */,
+				930F657A1CFEC316004F5A4B /* HJFontSizeTool.m */,
+			);
+			name = FontSize;
+			sourceTree = "<group>";
+		};
 		9310897D1CF6D4BE00D665ED /* fmdb */ = {
 			isa = PBXGroup;
 			children = (
@@ -459,6 +607,7 @@
 		933E5F881CF2D2B700C5F7BE /* Weibo */ = {
 			isa = PBXGroup;
 			children = (
+				930F65471CFD4BEE004F5A4B /* BaseSetting */,
 				9397CB2D1CFACF74006A362B /* Compose */,
 				93706A651CF43D6D007C7341 /* NewFeature */,
 				933E5FF31CF33B4E00C5F7BE /* Tool */,
@@ -614,6 +763,7 @@
 		933E5FF31CF33B4E00C5F7BE /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				930F65781CFEC2FC004F5A4B /* FontSize */,
 				93B7B79E1CFC2456008A139E /* Compose */,
 				93A21EFE1CF5DEDE002966E3 /* User */,
 				93A21EFD1CF5DED3002966E3 /* Status */,
@@ -740,6 +890,8 @@
 		933E60061CF342B100C5F7BE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				930F65651CFEAEBD004F5A4B /* HJProfileCell.h */,
+				930F65661CFEAEBD004F5A4B /* HJProfileCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1257,6 +1409,8 @@
 				93A21EDC1CF5D77D002966E3 /* MJPhoto.m in Sources */,
 				9310898B1CF6D4BE00D665ED /* FMDatabasePool.m in Sources */,
 				93A21EFB1CF5DC70002966E3 /* UIScrollView+MJRefresh.m in Sources */,
+				930F656E1CFEB2D8004F5A4B /* HJSettingViewController.m in Sources */,
+				930F654D1CFD4DFA004F5A4B /* HJGroupItem.m in Sources */,
 				93A21EE31CF5D77D002966E3 /* SDWebImageManager+MJ.m in Sources */,
 				9364838D1CF55B1C001D0E17 /* HJAccountParam.m in Sources */,
 				93A21EFC1CF5DC70002966E3 /* UIView+MJExtension.m in Sources */,
@@ -1267,6 +1421,7 @@
 				931089751CF6D10E00D665ED /* HJStatusParam.m in Sources */,
 				93706A601CF419C0007C7341 /* HJSearchBar.m in Sources */,
 				933E5FF21CF338D800C5F7BE /* HJWeibocfg.m in Sources */,
+				930F65501CFD4E1B004F5A4B /* HJSettingItem.m in Sources */,
 				93A21EF91CF5DC70002966E3 /* MJRefreshHeaderView.m in Sources */,
 				93A21E831CF5D102002966E3 /* NSDate+MJ.m in Sources */,
 				933E60111CF343E600C5F7BE /* HJDiscoverViewController.m in Sources */,
@@ -1277,28 +1432,34 @@
 				93A21E791CF5CF55002966E3 /* MJIvar.m in Sources */,
 				93B7B7A11CFC24A3008A139E /* HJComposeParam.m in Sources */,
 				93A21E7A1CF5CF55002966E3 /* MJMember.m in Sources */,
+				930F65711CFEB5DB004F5A4B /* HJLabelItem.m in Sources */,
 				93A21EC81CF5D67B002966E3 /* UIImage+WebP.m in Sources */,
 				93706A5D1CF418A3007C7341 /* UIImage+Resizable.m in Sources */,
 				93A21E571CF5CC87002966E3 /* HJStatus.m in Sources */,
 				9310898A1CF6D4BE00D665ED /* FMDatabaseAdditions.m in Sources */,
 				93A21E901CF5D595002966E3 /* HJRetweetedView.m in Sources */,
 				93706A631CF42D29007C7341 /* HJTitleButton.m in Sources */,
+				930F65531CFE95F4004F5A4B /* HJBaseSettingViewController.m in Sources */,
 				93A21E931CF5D5AF002966E3 /* HJToolBarView.m in Sources */,
 				93A21E761CF5CF55002966E3 /* MJArgument.m in Sources */,
 				93A21E771CF5CF55002966E3 /* MJConst.m in Sources */,
 				933E5F8E1CF2D2B700C5F7BE /* AppDelegate.m in Sources */,
 				93A21EF61CF5DC70002966E3 /* MJRefreshBaseView.m in Sources */,
+				930F65591CFE9D22004F5A4B /* HJArrowItem.m in Sources */,
 				933E601A1CF3448100C5F7BE /* HJProfileViewController.m in Sources */,
 				933E5FCC1CF2D8BF00C5F7BE /* HJTabBarButton.m in Sources */,
 				936483851CF5580D001D0E17 /* AFURLResponseSerialization.m in Sources */,
+				930F65621CFE9E69004F5A4B /* HJCheakItem.m in Sources */,
 				9364837F1CF5580D001D0E17 /* AFHTTPRequestOperationManager.m in Sources */,
 				93A21E801CF5CF55002966E3 /* NSObject+MJMember.m in Sources */,
 				93A21EC31CF5D67B002966E3 /* SDWebImageManager.m in Sources */,
 				93A21EDF1CF5D77D002966E3 /* MJPhotoLoadingView.m in Sources */,
 				93A21EF81CF5DC70002966E3 /* MJRefreshFooterView.m in Sources */,
 				93A21E8D1CF5D570002966E3 /* HJOriginalView.m in Sources */,
+				930F65741CFEBB8C004F5A4B /* HJCommonSettingViewController.m in Sources */,
 				9364837E1CF5580D001D0E17 /* AFHTTPRequestOperation.m in Sources */,
 				93A21ECB1CF5D67B002966E3 /* UIView+WebCacheOperation.m in Sources */,
+				930F655C1CFE9DA8004F5A4B /* HJBadgeItem.m in Sources */,
 				933E5FE51CF311AD00C5F7BE /* UIBarButtonItem+Create.m in Sources */,
 				93706A6E1CF43DF7007C7341 /* HJNewFeatureCell.m in Sources */,
 				93A21E961CF5D5D4002966E3 /* HJPhotosView.m in Sources */,
@@ -1318,6 +1479,7 @@
 				931089921CF6D82400D665ED /* HJUserTool.m in Sources */,
 				9310897C1CF6D2AB00D665ED /* HJStatusCacheTool.m in Sources */,
 				93A21E781CF5CF55002966E3 /* MJFoundation.m in Sources */,
+				930F65771CFEBE5B004F5A4B /* HJFontSizeViewController.m in Sources */,
 				936483811CF5580D001D0E17 /* AFNetworkReachabilityManager.m in Sources */,
 				93A21E5A1CF5CDC4002966E3 /* HJUser.m in Sources */,
 				93A21EC91CF5D67B002966E3 /* UIImageView+HighlightedWebCache.m in Sources */,
@@ -1339,13 +1501,17 @@
 				933E5FC91CF2D5F500C5F7BE /* HJTabBar.m in Sources */,
 				93A21EC11CF5D67B002966E3 /* SDWebImageDownloader.m in Sources */,
 				93A21EC71CF5D67B002966E3 /* UIImage+MultiFormat.m in Sources */,
+				930F657B1CFEC316004F5A4B /* HJFontSizeTool.m in Sources */,
 				936483841CF5580D001D0E17 /* AFURLRequestSerialization.m in Sources */,
 				93A21EC01CF5D67B002966E3 /* SDWebImageDecoder.m in Sources */,
 				933E5FD71CF30A3C00C5F7BE /* HJNavViewController.m in Sources */,
 				93A21EF71CF5DC70002966E3 /* MJRefreshConst.m in Sources */,
 				936483801CF5580D001D0E17 /* AFHTTPSessionManager.m in Sources */,
+				930F655F1CFE9DF9004F5A4B /* HJSwitchItem.m in Sources */,
 				93A21EC61CF5D67B002966E3 /* UIImage+GIF.m in Sources */,
+				930F65671CFEAEBD004F5A4B /* HJProfileCell.m in Sources */,
 				93A21E8A1CF5D31E002966E3 /* HJStatusFrame.m in Sources */,
+				930F65561CFE99F7004F5A4B /* HJSettingCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -52,7 +52,7 @@
     uploadParam.mineType = @"image/png";
     
     // 发送请求
-    [HJHttpTool upload:@"https://api.weibo.com/2/statuses/update.json" parameters:param.keyValues uploadParam:uploadParam success:^{
+    [HJHttpTool upload:@"https://upload.api.weibo.com/2/statuses/upload.json" parameters:param.keyValues uploadParam:uploadParam success:^{
         if (success) {
             success();
         }

@@ -6,8 +6,8 @@
 //  Copyright © 2016年 HanJian-F. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "HJBaseSettingViewController.h"
 
-@interface HJProfileViewController : UITableViewController
+@interface HJProfileViewController : HJBaseSettingViewController
 
 @end

@@ -27,5 +27,7 @@
 #define HJSourceFont [UIFont systemFontOfSize:12]
 #define HJTextFont [UIFont systemFontOfSize:18]
 
+#define HJFontSizeNote @"FontSizeNote"
+
 
 

@@ -4,7 +4,7 @@
 //
 //  Created by 傅韩建 on 16/5/25.
 //  Copyright © 2016年 HanJian-F. All rights reserved.
-//
+//  图片上传的模型
 
 #import <Foundation/Foundation.h>
 
